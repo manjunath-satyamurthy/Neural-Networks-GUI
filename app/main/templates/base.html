@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="{% static 'main/styles/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/styles/main.css' %}">
+    {% block links %}
+    {% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+
+  <body>
+    <div id="react-content" class="container-fluid">
+    </div>
+    <script type="text/javascript" src="{% static 'main/scripts/vendor.bundle.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main/scripts/base.bundle.js' %}"></script>
+    {% block script %}
+    {% endblock %}
+  </body>
+</html>
