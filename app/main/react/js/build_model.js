@@ -15,7 +15,9 @@ class BuildModel extends Component {
     this.state = {
     	currentTab: "feature_columns",
     	isHeaderLoaded: false,
+    	submitError: null,
     	columnsOptions: "loading",
+    	layerCount: 0,
     	selectedFeatures: [],
     	shouldShuffle: false,
     	batchSize: "Ex: 20",
@@ -23,22 +25,102 @@ class BuildModel extends Component {
     	epochs: "Ex: 50",
     	classColumn: "",
     	lossFunction: "",
-    	cusomLossFunc: "",
+    	customLossFunc: "",
     	lossFuncType: "standard",
-    	hiddenLayers: [],
-    	layerCount: 0,
     	hiddenLayersValues: {},
+    	learningRate: "",
+    	optimizer: "",
     }
 
     this.onTabChange = this.onTabChange.bind(this);
     this.navigate = this.navigate.bind(this);
     this.onChildUpdate = this.onChildUpdate.bind(this);
     this.onLayerUpdate = this.onLayerUpdate.bind(this);
+    this.onTrainClick = this.onTrainClick.bind(this);
+    this.submitToTrain = this.submitToTrain.bind(this);
   }
 
 
+ 	submitToTrain (){
+	    let data = new FormData();
+	    data.append(
+	      "data",
+	      JSON.stringify({
+  	    	selectedFeatures: this.state.selectedFeatures,
+	    	shouldShuffle: this.state.shouldShuffle,
+	    	batchSize: this.state.batchSize,
+	    	bufferSize: this.state.bufferSize,
+	    	epochs: this.state.epochs,
+	    	classColumn: this.state.classColumn,
+	    	lossFunction: this.state.lossFunction,
+	    	customLossFunc: this.state.customLossFunc,
+	    	lossFuncType: this.state.lossFuncType,
+	    	hiddenLayersValues: this.state.hiddenLayersValues,
+	    	learningRate: this.state.learningRate,
+	    	optimizer: this.state.optimizer,
+	      })
+	    );
+
+	    fetch(window.location.origin+"/train_network/", {
+	      method: "post",
+	      credentials: "include",
+	      body: data,
+	      headers: {
+	        Accept: "application/json"
+	      }
+	    }).then(res => {
+	        if (res.ok) {
+				return res.json();
+	        } else {
+				throw Error(res.statusText);
+	        }
+	    }).then(json => {
+	      	if (json.status == "success"){
+	      		console.log("success")
+	      	} else {
+	      		console.log("error")
+	      	}
+	    }).catch(err => {
+	        console.log(err);
+		});
+ 	}
+
+
+	onTrainClick (e){
+		this.setState({
+			submitError: null,
+		})
+		let error = false;
+		if (this.state.selectedFeatures.length > 0 && this.state.batchSize != "Ex: 20" &&
+			this.state.epochs != "Ex: 50" && this.state.classColumn != "" && 
+			Object.keys(this.state.hiddenLayersValues).length > 0 && this.state.learningRate != "" &&
+			this.state.optimizer != "" ){
+			if ((this.state.shouldShuffle && this.state.bufferSize != "Ex: 1000") || (!this.state.shouldShuffle)){
+				if ((this.state.lossFuncType == "standard" && this.state.lossFunction != "") ||
+					(this.state.lossFuncType == "custom" && this.state.customLossFunc != "")){
+
+					this.submitToTrain();
+
+				} else {
+					error = true;
+				}
+			} else {
+				error = true;
+			}
+		} else {
+			error = true;
+		}	
+
+		if (error){
+			this.setState({
+				submitError: true,
+			})
+		}
+	}
+
+
   onChildUpdate (e, state, value){
-  	if (value){
+  	if (value != undefined){
   		this.setState({
   			[state]: value
   		});
@@ -91,6 +173,7 @@ class BuildModel extends Component {
 
 
   navigate(navigateTo){
+
   	let tabs = ["feature_columns", "build_layers", "loss_function", "optimizers"];
   	let tabIndex = parseInt(tabs.indexOf(this.state.currentTab));
   	let nextTab = null;
@@ -102,6 +185,7 @@ class BuildModel extends Component {
 
   	this.setState({
   		currentTab: nextTab,
+  		submitError: false,
   	});
 
   }
@@ -109,8 +193,16 @@ class BuildModel extends Component {
   render() {
 
   	let content = null;
+  	let errorMessage = null;
+
   	let previousBtn = <button type="button" className="btn btn-secondary" onClick={e => this.navigate("previous")} >Previous</button>;
   	let nextBtn = <button type="button" className="btn btn-secondary" onClick={e => this.navigate("next")}>Next</button>;
+
+	if (this.state.submitError){
+		errorMessage = <div className="alert alert-danger" role="alert">
+		  Please Fill all the required feilds
+		</div>
+	}
 
   	if (this.state.currentTab === "feature_columns"){
   		content = <div className="card border-secondary">
@@ -147,10 +239,11 @@ class BuildModel extends Component {
   		content = <div className="card border-secondary">
 			<div className="card-header">Choose Optimization Function</div>
 			<div className="card-body text-secondary">
-				<Optimizers />
+				<Optimizers updateStateFromChild={this.onChildUpdate}
+					state={this.state} />
 			</div>
   		</div>
-  		nextBtn = <button type="button" className="btn btn-info">Finish</button>;
+  		nextBtn = <button type="button" className="btn btn-info" onClick={this.onTrainClick}>Start Training</button>;
   	}
 
   	return (
@@ -170,8 +263,9 @@ class BuildModel extends Component {
 	  		<div className="row justify-content-center top-margin-1">
 	  			<div className="col-md-10">
 	  				<div className="row">
-			  			<div className="col-md-6 text-left">{previousBtn}</div>
-			  			<div className="col-md-6 text-right">{nextBtn}</div>
+			  			<div className="col-md-4 text-left">{previousBtn}</div>
+			  			<div className="col-md-4 text-left">{errorMessage}</div>
+			  			<div className="col-md-4 text-right">{nextBtn}</div>
 	  				</div>
 	  			</div>
 	  		</div>

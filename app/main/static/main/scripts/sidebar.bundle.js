@@ -58,7 +58,7 @@ var SideBar = function (_Component) {
           },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             "a",
-            { className: "nav-link mr-auto", href: "#", __source: {
+            { className: "nav-link mr-auto", href: "", __source: {
                 fileName: _jsxFileName,
                 lineNumber: 11
               },
@@ -171,30 +171,10 @@ var SideBar = function (_Component) {
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   "a",
-                  { className: window.location.pathname === "/train_network/" ? "active nav-link" : 'nav-link',
-                    href: "/train_network", __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 30
-                    },
-                    __self: this
-                  },
-                  "Train Network"
-                )
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "li",
-                { className: "nav-item", __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 33
-                  },
-                  __self: this
-                },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  "a",
                   { className: window.location.pathname === "/visualization/" ? "active nav-link" : 'nav-link',
                     href: "/visualization", __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 34
+                      lineNumber: 30
                     },
                     __self: this
                   },
@@ -205,7 +185,7 @@ var SideBar = function (_Component) {
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { id: "page-content", className: "col-sm-10 col-md-10", __source: {
               fileName: _jsxFileName,
-              lineNumber: 39
+              lineNumber: 35
             },
             __self: this
           })
@@ -220,7 +200,7 @@ var SideBar = function (_Component) {
 __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(SideBar, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 50
+    lineNumber: 46
   },
   __self: this
 }), document.getElementById('react-content'));

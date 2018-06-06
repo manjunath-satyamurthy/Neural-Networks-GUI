@@ -10361,407 +10361,508 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var BuildModel = function (_Component) {
-  _inherits(BuildModel, _Component);
+	_inherits(BuildModel, _Component);
 
-  function BuildModel(props) {
-    _classCallCheck(this, BuildModel);
+	function BuildModel(props) {
+		_classCallCheck(this, BuildModel);
 
-    var _this = _possibleConstructorReturn(this, (BuildModel.__proto__ || Object.getPrototypeOf(BuildModel)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (BuildModel.__proto__ || Object.getPrototypeOf(BuildModel)).call(this, props));
 
-    _this.state = {
-      currentTab: "feature_columns",
-      isHeaderLoaded: false,
-      columnsOptions: "loading",
-      selectedFeatures: [],
-      shouldShuffle: false,
-      batchSize: "Ex: 20",
-      bufferSize: "Ex: 1000",
-      epochs: "Ex: 50",
-      classColumn: "",
-      lossFunction: "",
-      cusomLossFunc: "",
-      lossFuncType: "standard",
-      hiddenLayers: [],
-      layerCount: 0,
-      hiddenLayersValues: {}
-    };
+		_this.state = {
+			currentTab: "feature_columns",
+			isHeaderLoaded: false,
+			submitError: null,
+			columnsOptions: "loading",
+			layerCount: 0,
+			selectedFeatures: [],
+			shouldShuffle: false,
+			batchSize: "Ex: 20",
+			bufferSize: "Ex: 1000",
+			epochs: "Ex: 50",
+			classColumn: "",
+			lossFunction: "",
+			customLossFunc: "",
+			lossFuncType: "standard",
+			hiddenLayersValues: {},
+			learningRate: "",
+			optimizer: ""
+		};
 
-    _this.onTabChange = _this.onTabChange.bind(_this);
-    _this.navigate = _this.navigate.bind(_this);
-    _this.onChildUpdate = _this.onChildUpdate.bind(_this);
-    _this.onLayerUpdate = _this.onLayerUpdate.bind(_this);
-    return _this;
-  }
+		_this.onTabChange = _this.onTabChange.bind(_this);
+		_this.navigate = _this.navigate.bind(_this);
+		_this.onChildUpdate = _this.onChildUpdate.bind(_this);
+		_this.onLayerUpdate = _this.onLayerUpdate.bind(_this);
+		_this.onTrainClick = _this.onTrainClick.bind(_this);
+		_this.submitToTrain = _this.submitToTrain.bind(_this);
+		return _this;
+	}
 
-  _createClass(BuildModel, [{
-    key: 'onChildUpdate',
-    value: function onChildUpdate(e, state, value) {
-      if (value) {
-        this.setState(_defineProperty({}, state, value));
-      } else if (state === "selectedFeatures") {
-        var options = e.target.options;
-        var cols = [];
-        for (var i in options) {
-          if (options[i].selected) {
-            cols.push(options[i].value);
-          };
-        };
-        this.setState({
-          selectedFeatures: cols
-        });
-      } else {
-        this.setState(_defineProperty({}, state, e.target.type === 'checkbox' ? e.target.checked : e.target.value));
-      }
-    }
-  }, {
-    key: 'onLayerUpdate',
-    value: function onLayerUpdate(e, property, layerCount) {
-      var hiddenLayers = Object.assign({}, this.state.hiddenLayersValues);
+	_createClass(BuildModel, [{
+		key: 'submitToTrain',
+		value: function submitToTrain() {
+			var data = new FormData();
+			data.append("data", JSON.stringify({
+				selectedFeatures: this.state.selectedFeatures,
+				shouldShuffle: this.state.shouldShuffle,
+				batchSize: this.state.batchSize,
+				bufferSize: this.state.bufferSize,
+				epochs: this.state.epochs,
+				classColumn: this.state.classColumn,
+				lossFunction: this.state.lossFunction,
+				customLossFunc: this.state.customLossFunc,
+				lossFuncType: this.state.lossFuncType,
+				hiddenLayersValues: this.state.hiddenLayersValues,
+				learningRate: this.state.learningRate,
+				optimizer: this.state.optimizer
+			}));
 
-      if (!e) {
-        if (hiddenLayers[layerCount] == undefined) {
-          hiddenLayers[layerCount] = {};
-          hiddenLayers[layerCount][property[0]] = "";
-          hiddenLayers[layerCount][property[1]] = "";
-        }
-      } else {
-        hiddenLayers[layerCount][property] = e.target.value;
-      }
+			fetch(window.location.origin + "/train_network/", {
+				method: "post",
+				credentials: "include",
+				body: data,
+				headers: {
+					Accept: "application/json"
+				}
+			}).then(function (res) {
+				if (res.ok) {
+					return res.json();
+				} else {
+					throw Error(res.statusText);
+				}
+			}).then(function (json) {
+				if (json.status == "success") {
+					console.log("success");
+				} else {
+					console.log("error");
+				}
+			}).catch(function (err) {
+				console.log(err);
+			});
+		}
+	}, {
+		key: 'onTrainClick',
+		value: function onTrainClick(e) {
+			this.setState({
+				submitError: null
+			});
+			var error = false;
+			if (this.state.selectedFeatures.length > 0 && this.state.batchSize != "Ex: 20" && this.state.epochs != "Ex: 50" && this.state.classColumn != "" && Object.keys(this.state.hiddenLayersValues).length > 0 && this.state.learningRate != "" && this.state.optimizer != "") {
+				if (this.state.shouldShuffle && this.state.bufferSize != "Ex: 1000" || !this.state.shouldShuffle) {
+					if (this.state.lossFuncType == "standard" && this.state.lossFunction != "" || this.state.lossFuncType == "custom" && this.state.customLossFunc != "") {
 
-      console.log(hiddenLayers);
+						this.submitToTrain();
+					} else {
+						error = true;
+					}
+				} else {
+					error = true;
+				}
+			} else {
+				error = true;
+			}
 
-      this.setState(function (prevState) {
-        return { hiddenLayersValues: hiddenLayers };
-      });
-    }
-  }, {
-    key: 'onTabChange',
-    value: function onTabChange(e) {
-      this.setState({
-        currentTab: e.target.attributes.name.nodeValue
-      });
-    }
-  }, {
-    key: 'navigate',
-    value: function navigate(navigateTo) {
-      var tabs = ["feature_columns", "build_layers", "loss_function", "optimizers"];
-      var tabIndex = parseInt(tabs.indexOf(this.state.currentTab));
-      var nextTab = null;
-      if (navigateTo === "next") {
-        nextTab = tabs[tabIndex + 1];
-      } else if (navigateTo == "previous") {
-        nextTab = tabs[tabIndex - 1];
-      }
+			if (error) {
+				this.setState({
+					submitError: true
+				});
+			}
+		}
+	}, {
+		key: 'onChildUpdate',
+		value: function onChildUpdate(e, state, value) {
+			if (value != undefined) {
+				this.setState(_defineProperty({}, state, value));
+			} else if (state === "selectedFeatures") {
+				var options = e.target.options;
+				var cols = [];
+				for (var i in options) {
+					if (options[i].selected) {
+						cols.push(options[i].value);
+					};
+				};
+				this.setState({
+					selectedFeatures: cols
+				});
+			} else {
+				this.setState(_defineProperty({}, state, e.target.type === 'checkbox' ? e.target.checked : e.target.value));
+			}
+		}
+	}, {
+		key: 'onLayerUpdate',
+		value: function onLayerUpdate(e, property, layerCount) {
+			var hiddenLayers = Object.assign({}, this.state.hiddenLayersValues);
 
-      this.setState({
-        currentTab: nextTab
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
+			if (!e) {
+				if (hiddenLayers[layerCount] == undefined) {
+					hiddenLayers[layerCount] = {};
+					hiddenLayers[layerCount][property[0]] = "";
+					hiddenLayers[layerCount][property[1]] = "";
+				}
+			} else {
+				hiddenLayers[layerCount][property] = e.target.value;
+			}
 
-      var content = null;
-      var previousBtn = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'button',
-        { type: 'button', className: 'btn btn-secondary', onClick: function onClick(e) {
-            return _this2.navigate("previous");
-          }, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 112
-          },
-          __self: this
-        },
-        'Previous'
-      );
-      var nextBtn = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'button',
-        { type: 'button', className: 'btn btn-secondary', onClick: function onClick(e) {
-            return _this2.navigate("next");
-          }, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 113
-          },
-          __self: this
-        },
-        'Next'
-      );
+			console.log(hiddenLayers);
 
-      if (this.state.currentTab === "feature_columns") {
-        content = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'card border-secondary', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 116
-            },
-            __self: this
-          },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'card-header', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 117
-              },
-              __self: this
-            },
-            'Features & Initialization'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'card-body text-secondary', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 118
-              },
-              __self: this
-            },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_feature_selection_js__["a" /* FeatureSelection */], {
-              updateStateFromChild: this.onChildUpdate,
-              state: this.state,
-              isDataLoaded: this.state.isHeaderLoaded,
-              columnsOptions: this.state.columnsOptions,
-              selectedFeatures: this.state.selectedFeatures, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 119
-              },
-              __self: this
-            })
-          )
-        );
-        previousBtn = null;
-      } else if (this.state.currentTab === "build_layers") {
-        content = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'card border-secondary', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 129
-            },
-            __self: this
-          },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'card-header', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 130
-              },
-              __self: this
-            },
-            'Build Layers'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'card-body text-secondary', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 131
-              },
-              __self: this
-            },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_build_layers_js__["a" /* BuildLayers */], { updateStateFromChild: this.onChildUpdate,
-              updateLayer: this.onLayerUpdate,
-              state: this.state,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 132
-              },
-              __self: this
-            })
-          )
-        );
-      } else if (this.state.currentTab === "loss_function") {
-        content = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'card border-secondary', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 139
-            },
-            __self: this
-          },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'card-header', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 140
-              },
-              __self: this
-            },
-            'Choose Loss Function'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'card-body text-secondary', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 141
-              },
-              __self: this
-            },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__components_loss_function_js__["a" /* LossFunction */], { updateStateFromChild: this.onChildUpdate,
-              state: this.state, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 142
-              },
-              __self: this
-            })
-          )
-        );
-      } else if (this.state.currentTab === "optimizers") {
-        content = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'card border-secondary', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 147
-            },
-            __self: this
-          },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'card-header', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 148
-              },
-              __self: this
-            },
-            'Choose Optimization Function'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'card-body text-secondary', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 149
-              },
-              __self: this
-            },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__components_optimizers_js__["a" /* Optimizers */], {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 150
-              },
-              __self: this
-            })
-          )
-        );
-        nextBtn = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          { type: 'button', className: 'btn btn-info', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 153
-            },
-            __self: this
-          },
-          'Finish'
-        );
-      }
+			this.setState(function (prevState) {
+				return { hiddenLayersValues: hiddenLayers };
+			});
+		}
+	}, {
+		key: 'onTabChange',
+		value: function onTabChange(e) {
+			this.setState({
+				currentTab: e.target.attributes.name.nodeValue
+			});
+		}
+	}, {
+		key: 'navigate',
+		value: function navigate(navigateTo) {
 
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { className: 'container-fluid top-margin-1', __source: {
-            fileName: _jsxFileName,
-            lineNumber: 157
-          },
-          __self: this
-        },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'row justify-content-center', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 158
-            },
-            __self: this
-          },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'col-md-10', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 159
-              },
-              __self: this
-            },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_breadcrumb_js__["a" /* Breadcrumb */], { currentTab: this.state.currentTab, onCrumbClick: this.onTabChange, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 160
-              },
-              __self: this
-            })
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'row justify-content-center', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 164
-            },
-            __self: this
-          },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'col-md-10', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 165
-              },
-              __self: this
-            },
-            content
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'row justify-content-center top-margin-1', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 170
-            },
-            __self: this
-          },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'col-md-10', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 171
-              },
-              __self: this
-            },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              { className: 'row', __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 172
-                },
-                __self: this
-              },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                { className: 'col-md-6 text-left', __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 173
-                  },
-                  __self: this
-                },
-                previousBtn
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                { className: 'col-md-6 text-right', __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 174
-                  },
-                  __self: this
-                },
-                nextBtn
-              )
-            )
-          )
-        )
-      );
-    }
-  }]);
+			var tabs = ["feature_columns", "build_layers", "loss_function", "optimizers"];
+			var tabIndex = parseInt(tabs.indexOf(this.state.currentTab));
+			var nextTab = null;
+			if (navigateTo === "next") {
+				nextTab = tabs[tabIndex + 1];
+			} else if (navigateTo == "previous") {
+				nextTab = tabs[tabIndex - 1];
+			}
 
-  return BuildModel;
+			this.setState({
+				currentTab: nextTab,
+				submitError: false
+			});
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _this2 = this;
+
+			var content = null;
+			var errorMessage = null;
+
+			var previousBtn = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				'button',
+				{ type: 'button', className: 'btn btn-secondary', onClick: function onClick(e) {
+						return _this2.navigate("previous");
+					}, __source: {
+						fileName: _jsxFileName,
+						lineNumber: 198
+					},
+					__self: this
+				},
+				'Previous'
+			);
+			var nextBtn = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				'button',
+				{ type: 'button', className: 'btn btn-secondary', onClick: function onClick(e) {
+						return _this2.navigate("next");
+					}, __source: {
+						fileName: _jsxFileName,
+						lineNumber: 199
+					},
+					__self: this
+				},
+				'Next'
+			);
+
+			if (this.state.submitError) {
+				errorMessage = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'div',
+					{ className: 'alert alert-danger', role: 'alert', __source: {
+							fileName: _jsxFileName,
+							lineNumber: 202
+						},
+						__self: this
+					},
+					'Please Fill all the required feilds'
+				);
+			}
+
+			if (this.state.currentTab === "feature_columns") {
+				content = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'div',
+					{ className: 'card border-secondary', __source: {
+							fileName: _jsxFileName,
+							lineNumber: 208
+						},
+						__self: this
+					},
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'div',
+						{ className: 'card-header', __source: {
+								fileName: _jsxFileName,
+								lineNumber: 209
+							},
+							__self: this
+						},
+						'Features & Initialization'
+					),
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'div',
+						{ className: 'card-body text-secondary', __source: {
+								fileName: _jsxFileName,
+								lineNumber: 210
+							},
+							__self: this
+						},
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_feature_selection_js__["a" /* FeatureSelection */], {
+							updateStateFromChild: this.onChildUpdate,
+							state: this.state,
+							isDataLoaded: this.state.isHeaderLoaded,
+							columnsOptions: this.state.columnsOptions,
+							selectedFeatures: this.state.selectedFeatures, __source: {
+								fileName: _jsxFileName,
+								lineNumber: 211
+							},
+							__self: this
+						})
+					)
+				);
+				previousBtn = null;
+			} else if (this.state.currentTab === "build_layers") {
+				content = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'div',
+					{ className: 'card border-secondary', __source: {
+							fileName: _jsxFileName,
+							lineNumber: 221
+						},
+						__self: this
+					},
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'div',
+						{ className: 'card-header', __source: {
+								fileName: _jsxFileName,
+								lineNumber: 222
+							},
+							__self: this
+						},
+						'Build Layers'
+					),
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'div',
+						{ className: 'card-body text-secondary', __source: {
+								fileName: _jsxFileName,
+								lineNumber: 223
+							},
+							__self: this
+						},
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_build_layers_js__["a" /* BuildLayers */], { updateStateFromChild: this.onChildUpdate,
+							updateLayer: this.onLayerUpdate,
+							state: this.state,
+							__source: {
+								fileName: _jsxFileName,
+								lineNumber: 224
+							},
+							__self: this
+						})
+					)
+				);
+			} else if (this.state.currentTab === "loss_function") {
+				content = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'div',
+					{ className: 'card border-secondary', __source: {
+							fileName: _jsxFileName,
+							lineNumber: 231
+						},
+						__self: this
+					},
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'div',
+						{ className: 'card-header', __source: {
+								fileName: _jsxFileName,
+								lineNumber: 232
+							},
+							__self: this
+						},
+						'Choose Loss Function'
+					),
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'div',
+						{ className: 'card-body text-secondary', __source: {
+								fileName: _jsxFileName,
+								lineNumber: 233
+							},
+							__self: this
+						},
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__components_loss_function_js__["a" /* LossFunction */], { updateStateFromChild: this.onChildUpdate,
+							state: this.state, __source: {
+								fileName: _jsxFileName,
+								lineNumber: 234
+							},
+							__self: this
+						})
+					)
+				);
+			} else if (this.state.currentTab === "optimizers") {
+				content = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'div',
+					{ className: 'card border-secondary', __source: {
+							fileName: _jsxFileName,
+							lineNumber: 239
+						},
+						__self: this
+					},
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'div',
+						{ className: 'card-header', __source: {
+								fileName: _jsxFileName,
+								lineNumber: 240
+							},
+							__self: this
+						},
+						'Choose Optimization Function'
+					),
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'div',
+						{ className: 'card-body text-secondary', __source: {
+								fileName: _jsxFileName,
+								lineNumber: 241
+							},
+							__self: this
+						},
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__components_optimizers_js__["a" /* Optimizers */], { updateStateFromChild: this.onChildUpdate,
+							state: this.state, __source: {
+								fileName: _jsxFileName,
+								lineNumber: 242
+							},
+							__self: this
+						})
+					)
+				);
+				nextBtn = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'button',
+					{ type: 'button', className: 'btn btn-info', onClick: this.onTrainClick, __source: {
+							fileName: _jsxFileName,
+							lineNumber: 246
+						},
+						__self: this
+					},
+					'Start Training'
+				);
+			}
+
+			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				'div',
+				{ className: 'container-fluid top-margin-1', __source: {
+						fileName: _jsxFileName,
+						lineNumber: 250
+					},
+					__self: this
+				},
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'div',
+					{ className: 'row justify-content-center', __source: {
+							fileName: _jsxFileName,
+							lineNumber: 251
+						},
+						__self: this
+					},
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'div',
+						{ className: 'col-md-10', __source: {
+								fileName: _jsxFileName,
+								lineNumber: 252
+							},
+							__self: this
+						},
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_breadcrumb_js__["a" /* Breadcrumb */], { currentTab: this.state.currentTab, onCrumbClick: this.onTabChange, __source: {
+								fileName: _jsxFileName,
+								lineNumber: 253
+							},
+							__self: this
+						})
+					)
+				),
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'div',
+					{ className: 'row justify-content-center', __source: {
+							fileName: _jsxFileName,
+							lineNumber: 257
+						},
+						__self: this
+					},
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'div',
+						{ className: 'col-md-10', __source: {
+								fileName: _jsxFileName,
+								lineNumber: 258
+							},
+							__self: this
+						},
+						content
+					)
+				),
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'div',
+					{ className: 'row justify-content-center top-margin-1', __source: {
+							fileName: _jsxFileName,
+							lineNumber: 263
+						},
+						__self: this
+					},
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'div',
+						{ className: 'col-md-10', __source: {
+								fileName: _jsxFileName,
+								lineNumber: 264
+							},
+							__self: this
+						},
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							'div',
+							{ className: 'row', __source: {
+									fileName: _jsxFileName,
+									lineNumber: 265
+								},
+								__self: this
+							},
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'div',
+								{ className: 'col-md-4 text-left', __source: {
+										fileName: _jsxFileName,
+										lineNumber: 266
+									},
+									__self: this
+								},
+								previousBtn
+							),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'div',
+								{ className: 'col-md-4 text-left', __source: {
+										fileName: _jsxFileName,
+										lineNumber: 267
+									},
+									__self: this
+								},
+								errorMessage
+							),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'div',
+								{ className: 'col-md-4 text-right', __source: {
+										fileName: _jsxFileName,
+										lineNumber: 268
+									},
+									__self: this
+								},
+								nextBtn
+							)
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return BuildModel;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(BuildModel, {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 187
-  },
-  __self: this
+	__source: {
+		fileName: _jsxFileName,
+		lineNumber: 281
+	},
+	__self: this
 }), document.getElementById('page-content'));
 
 /***/ }),
@@ -11446,7 +11547,11 @@ var LossFunction = function (_Component) {
 			if (this.props.state.lossFuncType == "standard") {
 				lossFuncBody = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 					'select',
-					{ className: 'col-md-4 form-control form-control-sm top-margin-4', __source: {
+					{ className: 'col-md-4 form-control form-control-sm top-margin-4',
+						onChange: function onChange(e) {
+							return _this2.props.updateStateFromChild(null, "lossFunction", e.target.value);
+						},
+						value: this.props.state.lossFunction, __source: {
 							fileName: _jsxFileName,
 							lineNumber: 23
 						},
@@ -11454,10 +11559,9 @@ var LossFunction = function (_Component) {
 					},
 					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 						'option',
-						{
-							__source: {
+						{ value: '', __source: {
 								fileName: _jsxFileName,
-								lineNumber: 24
+								lineNumber: 26
 							},
 							__self: this
 						},
@@ -11465,10 +11569,9 @@ var LossFunction = function (_Component) {
 					),
 					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 						'option',
-						{
-							__source: {
+						{ value: 'SigmoidCrossEntropy', __source: {
 								fileName: _jsxFileName,
-								lineNumber: 25
+								lineNumber: 27
 							},
 							__self: this
 						},
@@ -11476,10 +11579,9 @@ var LossFunction = function (_Component) {
 					),
 					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 						'option',
-						{
-							__source: {
+						{ value: 'SoftmaxCrossEntropy', __source: {
 								fileName: _jsxFileName,
-								lineNumber: 26
+								lineNumber: 28
 							},
 							__self: this
 						},
@@ -11487,10 +11589,9 @@ var LossFunction = function (_Component) {
 					),
 					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 						'option',
-						{
-							__source: {
+						{ value: 'SparseSoftmaxCrossEntropy', __source: {
 								fileName: _jsxFileName,
-								lineNumber: 27
+								lineNumber: 29
 							},
 							__self: this
 						},
@@ -11499,7 +11600,7 @@ var LossFunction = function (_Component) {
 				);
 			} else if (this.props.state.lossFuncType == "custom") {
 				lossFuncBody = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_ace___default.a, {
-					className: 'top-margin-4',
+					className: 'top-margin-4 loss-ace-editor',
 					value: this.props.state.customLossFunc,
 					mode: 'python',
 					theme: 'solarized_dark',
@@ -11509,6 +11610,7 @@ var LossFunction = function (_Component) {
 					},
 					name: 'code',
 					width: '100%',
+					height: '60vh',
 					setOptions: {
 						enableBasicAutocompletion: true,
 						enableLiveAutocompletion: true,
@@ -11518,7 +11620,7 @@ var LossFunction = function (_Component) {
 					},
 					__source: {
 						fileName: _jsxFileName,
-						lineNumber: 30
+						lineNumber: 32
 					},
 					__self: this
 				});
@@ -11529,7 +11631,7 @@ var LossFunction = function (_Component) {
 				{
 					__source: {
 						fileName: _jsxFileName,
-						lineNumber: 50
+						lineNumber: 53
 					},
 					__self: this
 				},
@@ -11537,7 +11639,7 @@ var LossFunction = function (_Component) {
 					'div',
 					{ className: 'row justify-content-center', __source: {
 							fileName: _jsxFileName,
-							lineNumber: 51
+							lineNumber: 54
 						},
 						__self: this
 					},
@@ -11545,7 +11647,7 @@ var LossFunction = function (_Component) {
 						'div',
 						{ className: 'form-check form-check-inline', __source: {
 								fileName: _jsxFileName,
-								lineNumber: 52
+								lineNumber: 55
 							},
 							__self: this
 						},
@@ -11553,7 +11655,7 @@ var LossFunction = function (_Component) {
 							checked: this.props.state.lossFuncType == "standard" ? true : false,
 							onChange: this.onFunctionTypeChange, __source: {
 								fileName: _jsxFileName,
-								lineNumber: 53
+								lineNumber: 56
 							},
 							__self: this
 						}),
@@ -11561,7 +11663,7 @@ var LossFunction = function (_Component) {
 							'label',
 							{ className: 'form-check-label', __source: {
 									fileName: _jsxFileName,
-									lineNumber: 56
+									lineNumber: 59
 								},
 								__self: this
 							},
@@ -11569,7 +11671,7 @@ var LossFunction = function (_Component) {
 						),
 						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-md-1', __source: {
 								fileName: _jsxFileName,
-								lineNumber: 59
+								lineNumber: 62
 							},
 							__self: this
 						}),
@@ -11577,7 +11679,7 @@ var LossFunction = function (_Component) {
 							checked: this.props.state.lossFuncType == "custom" ? true : false,
 							onChange: this.onFunctionTypeChange, __source: {
 								fileName: _jsxFileName,
-								lineNumber: 60
+								lineNumber: 63
 							},
 							__self: this
 						}),
@@ -11585,7 +11687,7 @@ var LossFunction = function (_Component) {
 							'label',
 							{ className: 'form-check-label', __source: {
 									fileName: _jsxFileName,
-									lineNumber: 63
+									lineNumber: 66
 								},
 								__self: this
 							},
@@ -11597,7 +11699,7 @@ var LossFunction = function (_Component) {
 					'div',
 					{ className: 'row justify-content-center', __source: {
 							fileName: _jsxFileName,
-							lineNumber: 68
+							lineNumber: 71
 						},
 						__self: this
 					},
@@ -11625,6 +11727,8 @@ var LossFunction = function (_Component) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Optimizers; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(/*! react */ 0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+var _jsxFileName = "/home/manju/thesis/app/main/react/js/components/optimizers.js";
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -11647,7 +11751,127 @@ var Optimizers = function (_Component) {
 	_createClass(Optimizers, [{
 		key: "render",
 		value: function render() {
-			return "hello";
+			var _this2 = this;
+
+			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				"div",
+				{
+					__source: {
+						fileName: _jsxFileName,
+						lineNumber: 12
+					},
+					__self: this
+				},
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					"div",
+					{ className: "row justify-content-center", __source: {
+							fileName: _jsxFileName,
+							lineNumber: 13
+						},
+						__self: this
+					},
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						"select",
+						{ className: "col-md-4 form-control form-control-sm top-margin-4 mb-3",
+							onChange: function onChange(e) {
+								return _this2.props.updateStateFromChild(e, "optimizer");
+							},
+							value: this.props.state.optimizer, __source: {
+								fileName: _jsxFileName,
+								lineNumber: 14
+							},
+							__self: this
+						},
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							"option",
+							{ value: "", __source: {
+									fileName: _jsxFileName,
+									lineNumber: 17
+								},
+								__self: this
+							},
+							"Choose an Optimization Function"
+						),
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							"option",
+							{ value: "MomentumOptimizer", __source: {
+									fileName: _jsxFileName,
+									lineNumber: 18
+								},
+								__self: this
+							},
+							"Momentum Optimizer"
+						),
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							"option",
+							{ value: "GradientDescentOptimizer", __source: {
+									fileName: _jsxFileName,
+									lineNumber: 19
+								},
+								__self: this
+							},
+							"Gradient Descent Optimizer"
+						),
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							"option",
+							{ value: "AdagradOptimizer", __source: {
+									fileName: _jsxFileName,
+									lineNumber: 20
+								},
+								__self: this
+							},
+							"Adagrad Optimizer"
+						)
+					)
+				),
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					"div",
+					{ className: "row justify-content-center", __source: {
+							fileName: _jsxFileName,
+							lineNumber: 23
+						},
+						__self: this
+					},
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						"div",
+						{ className: "input-group mb-3 col-md-4", __source: {
+								fileName: _jsxFileName,
+								lineNumber: 24
+							},
+							__self: this
+						},
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							"div",
+							{ className: "input-group-prepend", __source: {
+									fileName: _jsxFileName,
+									lineNumber: 25
+								},
+								__self: this
+							},
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								"span",
+								{ className: "input-group-text", id: "", __source: {
+										fileName: _jsxFileName,
+										lineNumber: 26
+									},
+									__self: this
+								},
+								"Learning Rate"
+							)
+						),
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "text", className: "form-control",
+							onChange: function onChange(e) {
+								return _this2.props.updateStateFromChild(e, "learningRate");
+							},
+							value: this.props.state.learningRate, __source: {
+								fileName: _jsxFileName,
+								lineNumber: 28
+							},
+							__self: this
+						})
+					)
+				)
+			);
 		}
 	}]);
 

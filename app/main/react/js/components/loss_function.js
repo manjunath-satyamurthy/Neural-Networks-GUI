@@ -20,15 +20,17 @@ class LossFunction extends Component {
 		let lossFuncBody = null;
 		console.log(this.props.state.lossFuncType)
 		if (this.props.state.lossFuncType == "standard"){
-			lossFuncBody = <select className="col-md-4 form-control form-control-sm top-margin-4">
-					<option>Choose Loss Function</option>
-					<option>Sigmoid Cross Entropy</option>
-					<option>Softmax Cross Entropy</option>
-					<option>Sparse Softmax Cross Entropy</option>
+			lossFuncBody = <select className="col-md-4 form-control form-control-sm top-margin-4"
+				onChange={e=> this.props.updateStateFromChild(null, "lossFunction", e.target.value)}
+				value={this.props.state.lossFunction} >
+					<option value="">Choose Loss Function</option>
+					<option value="SigmoidCrossEntropy">Sigmoid Cross Entropy</option>
+					<option value="SoftmaxCrossEntropy">Softmax Cross Entropy</option>
+					<option value="SparseSoftmaxCrossEntropy">Sparse Softmax Cross Entropy</option>
 			</select>
 		} else if (this.props.state.lossFuncType == "custom"){
 			lossFuncBody = <AceEditor
-				className="top-margin-4"
+				className="top-margin-4 loss-ace-editor"
 				value={this.props.state.customLossFunc}
 				mode="python"
 				theme="solarized_dark"
@@ -36,6 +38,7 @@ class LossFunction extends Component {
 				onChange={value => this.props.updateStateFromChild(null, "customLossFunc", value)}
 				name="code"
 				width="100%"
+				height="60vh"
 				setOptions={{
 					enableBasicAutocompletion: true,
 					enableLiveAutocompletion: true,

@@ -17,6 +17,6 @@ urlpatterns = [
 	url(r'^get_empty_cols_by_string/(?P<search_term>[a-z A-Z 0-9]+)/$', 
 		views.get_cols_by_string, name="get_cols_by_string"),
 	url(r'^build_network/$', views.build_model, name='build_model'),
-	url(r'^train_network/$', views.base, name='base'),
-	url(r'^visualization/$', views.base, name='base'),
+	url(r'^train_network/$', views.train_model, name='train_model'),
+	url(r'^visualization/$', views.visualization, name='visualization'),
 ]

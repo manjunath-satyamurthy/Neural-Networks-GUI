@@ -365,9 +365,22 @@ def scale_columns(request):
 		return JsonResponse({"status": 'success'})
 
 
+@csrf_exempt
+@login_required
+def visualization(request):
+	if request.method == 'GET':
+		return redirect("/login")
+
 
 @csrf_exempt
 @login_required
 def build_model(request):
 	if request.method == 'GET':
 		return render(request, 'build_model.html')
+
+
+@csrf_exempt
+@login_required
+def train_model(request):
+	if request.method == 'POST':
+		return redirect("/visualization")
