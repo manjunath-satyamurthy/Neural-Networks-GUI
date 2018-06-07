@@ -127,3 +127,8 @@ AUTH_USER_MODEL = 'main.RootUser'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR + "/media/"
+
+
+CELERY_BROKER_URL = 'amqp://thesis:shrink@localhost/thesishost'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'

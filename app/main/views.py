@@ -1,14 +1,17 @@
-import json, tempfile
+import os, json, tempfile
 from django.shortcuts import HttpResponse, render, redirect
 from django.http import JsonResponse
 from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from django.core.files.base import ContentFile
+from django.conf import settings
 from models import RootUser
 
 from sklearn import preprocessing
 import numpy as np
+
+from tasks import train_network
 
 
 @csrf_exempt
@@ -383,4 +386,27 @@ def build_model(request):
 @login_required
 def train_model(request):
 	if request.method == 'POST':
-		return redirect("/visualization")
+		post_data = json.loads(request.POST['data'])	
+		error_messsage = None
+
+ 		try:
+ 			if post_data["shouldShuffle"]:
+ 				float(post_data["bufferSize"])
+ 			float(post_data["batchSize"])
+ 			float(post_data["epochs"])
+ 			float(post_data["learningRate"])
+ 			for k , v in post_data["hiddenLayersValues"].items():
+ 				float(v["neuronsCount"])
+ 		except Exception, e:
+ 			print str(e)
+ 			error_messsage = "plese check all the input values to be numbers only"
+
+ 		if not error_messsage:
+ 			csv_path = request.user.csvfile.url.split("/")
+ 			csv_path.pop(0)
+ 			file_path = os.path.join(settings.BASE_DIR, "/".join(csv_path))
+ 			train_network.delay(file_path, **post_data)
+ 			# return JsonResponse({"status": 'success'})
+ 		else:
+ 			# return JsonResponse({"status": 'failed', "message": error_messsage})
+ 			pass

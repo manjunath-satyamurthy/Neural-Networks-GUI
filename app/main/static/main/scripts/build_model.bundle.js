@@ -11341,8 +11341,7 @@ var BuildLayers = function (_Component) {
 						},
 						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 							"option",
-							{
-								__source: {
+							{ value: "", __source: {
 									fileName: _jsxFileName,
 									lineNumber: 34
 								},
@@ -11352,8 +11351,7 @@ var BuildLayers = function (_Component) {
 						),
 						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 							"option",
-							{
-								__source: {
+							{ value: "relu", __source: {
 									fileName: _jsxFileName,
 									lineNumber: 35
 								},
@@ -11363,8 +11361,7 @@ var BuildLayers = function (_Component) {
 						),
 						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 							"option",
-							{
-								__source: {
+							{ value: "sigmoid", __source: {
 									fileName: _jsxFileName,
 									lineNumber: 36
 								},
@@ -11374,8 +11371,7 @@ var BuildLayers = function (_Component) {
 						),
 						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 							"option",
-							{
-								__source: {
+							{ value: "softmax", __source: {
 									fileName: _jsxFileName,
 									lineNumber: 37
 								},
@@ -11385,8 +11381,7 @@ var BuildLayers = function (_Component) {
 						),
 						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 							"option",
-							{
-								__source: {
+							{ value: "tanh", __source: {
 									fileName: _jsxFileName,
 									lineNumber: 38
 								},

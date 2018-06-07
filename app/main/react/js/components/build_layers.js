@@ -31,11 +31,11 @@ class BuildLayers extends Component {
 				selectNode = <select className="form-control form-control-sm top-margin-4"
 					onChange={e=>this.props.updateLayer(e, "activationFunc", i)}
 					value={this.props.state.hiddenLayersValues[i].activationFunc} >
-					<option>Choose Activation Function</option>
-					<option>Relu</option>
-					<option>Sigmoid</option>
-					<option>Softmax</option>
-					<option>TanH</option>
+					<option value="">Choose Activation Function</option>
+					<option value="relu">Relu</option>
+					<option value="sigmoid">Sigmoid</option>
+					<option value="softmax">Softmax</option>
+					<option value="tanh">TanH</option>
 				</select>
 			  	
 			  	let hiddenLayer = <div className="row align-items-end justify-content-center" key={i}>
