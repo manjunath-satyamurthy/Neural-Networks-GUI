@@ -21,7 +21,7 @@ class BuildModel extends Component {
     	selectedFeatures: [],
     	shouldShuffle: false,
     	batchSize: "Ex: 20",
-    	bufferSize: "Ex: 1000",
+    	bufferSize: "Enter the buffer size to shuffle",
     	epochs: "Ex: 50",
     	classColumn: "",
     	lossFunction: "",
@@ -76,7 +76,7 @@ class BuildModel extends Component {
 	        }
 	    }).then(json => {
 	      	if (json.status == "success"){
-	      		console.log("success")
+	      		window.location.replace("/visualization/?task_id="+json.task_id)
 	      	} else {
 	      		console.log("error")
 	      	}
@@ -95,7 +95,7 @@ class BuildModel extends Component {
 			this.state.epochs != "Ex: 50" && this.state.classColumn != "" && 
 			Object.keys(this.state.hiddenLayersValues).length > 0 && this.state.learningRate != "" &&
 			this.state.optimizer != "" ){
-			if ((this.state.shouldShuffle && this.state.bufferSize != "Ex: 1000") || (!this.state.shouldShuffle)){
+			if ((this.state.shouldShuffle && this.state.bufferSize != "Enter the buffer size to shuffle") || (!this.state.shouldShuffle)){
 				if ((this.state.lossFuncType == "standard" && this.state.lossFunction != "") ||
 					(this.state.lossFuncType == "custom" && this.state.customLossFunc != "")){
 

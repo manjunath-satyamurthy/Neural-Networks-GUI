@@ -1,0 +1,15 @@
+{
+  "name": "socket_app",
+  "version": "1.0.0",
+  "description": "Node.js socket server for streaming training data",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "latest",
+    "redis": "latest"
+  }
+}

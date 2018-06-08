@@ -1,8 +1,10 @@
 # Create your tasks here
-from __future__ import absolute_import, unicode_literals
 from app import celery_app
 
-import os, json
+import os, json, redis
+
+r = redis.StrictRedis()
+
 import tensorflow as tf
 import tensorflow.contrib.eager as tfe
 
@@ -10,7 +12,7 @@ tf.enable_eager_execution()
 
 
 @celery_app.task
-def train_network(filePath, **kwargs):
+def train_network(task_id, filePath, **kwargs):
     optimizers = {
         "GradientDescentOptimizer": tf.train.GradientDescentOptimizer,
         "MomentumOptimizer": tf.train.MomentumOptimizer ,
@@ -119,6 +121,27 @@ def train_network(filePath, **kwargs):
         train_loss_results.append(epoch_loss_avg.result())
         train_accuracy_results.append(epoch_accuracy.result())
 
-        if epoch % 5 == 0:
-            print "Epoch {:03d}: Loss: {:.3f}, Accuracy: {:.3%}".\
-                format(epoch, epoch_loss_avg.result(), epoch_accuracy.result())
+        # if epoch % 5 == 0:
+
+        predictions = model(x)
+        outputs = []
+        outputs_count = []
+        for i, logits in enumerate(predictions):
+            class_idx = tf.argmax(logits).numpy()
+            outputs.append(int(class_idx))
+
+        outputs_set = set(outputs)
+        for i in outputs_set:
+            outputs_count.append({
+                "name": i,
+                "value": outputs.count(i)
+                })
+
+        analysis =  {
+            "epoch": int(epoch),
+            "loss": float(epoch_loss_avg.result().numpy()),
+            "accuracy": float(epoch_accuracy.result().numpy()),
+            "outputs": outputs_count
+        }
+        r.publish(task_id, json.dumps(analysis))
+        print analysis

@@ -1,4 +1,4 @@
-import os, json, tempfile
+import os, json, tempfile, uuid
 from django.shortcuts import HttpResponse, render, redirect
 from django.http import JsonResponse
 from django.contrib.auth import authenticate, login, logout
@@ -86,7 +86,7 @@ def add_column(request):
 
 				
 				for i, line in enumerate(csv):
-					function_call = '\nvalue = add_column('+ "%s,"*len(argumentss)+')'
+					function_call = '\nvalue = add_column('+ "'%s',"*len(argumentss)+')'
 
 					if i == 0:
 						tp.write(line+','+column_name+'\n')
@@ -96,14 +96,14 @@ def add_column(request):
 						for key, arg in argumentss.items():
 							value = line_list[header.index(arg)]
 							if value:
-								params.append(value)
+								params.append(value.strip())
 							else:
 								params.append("'NA'")
 
 
 						function_call = function_call % tuple(params)
 						exec_method = method + function_call
-
+						print exec_method
 						exec(exec_method)
 						tp.write(line+','+str(value)+'\n')
 
@@ -113,6 +113,7 @@ def add_column(request):
 				request.user.csvfile.save('csvfile.csv', ContentFile(tp.read()))
 
 		except Exception as e:
+			print e
 			return JsonResponse({"status": "failed", "message": str(e)})
 
 		return JsonResponse({"status": 'success'})
@@ -372,7 +373,7 @@ def scale_columns(request):
 @login_required
 def visualization(request):
 	if request.method == 'GET':
-		return redirect("/login")
+		return render(request, 'visualization.html')
 
 
 @csrf_exempt
@@ -405,8 +406,8 @@ def train_model(request):
  			csv_path = request.user.csvfile.url.split("/")
  			csv_path.pop(0)
  			file_path = os.path.join(settings.BASE_DIR, "/".join(csv_path))
- 			train_network.delay(file_path, **post_data)
- 			# return JsonResponse({"status": 'success'})
+ 			task_id = str(uuid.uuid1())
+ 			train_network.delay(task_id, file_path, **post_data)
+ 			return JsonResponse({"status": 'success', "task_id": task_id})
  		else:
- 			# return JsonResponse({"status": 'failed', "message": error_messsage})
- 			pass
+ 			return JsonResponse({"status": 'failed', "message": error_messsage})
