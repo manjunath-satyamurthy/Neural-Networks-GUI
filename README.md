@@ -47,10 +47,10 @@ neurons. This communication happens through a connection called synaptic
 connection. This connection typically consists of one end of a neuron's
 axon to the dendrite of another neuron. The figure
 [\[fig:bio\_neuron\]](images/bio_neuron){reference-type="ref"
-reference="fig:bio_neuron"} shows a typical biological neuron with the
+reference="fig:bio_neuron") shows a typical biological neuron with the
 parts as described above [@neuronworking].
 
-[\[fig:bio\_neuron\]]{images/bio_neuron label="fig:bio_neuron"}
+[\[fig:bio\_neuron\]](images/bio_neuron )
 
 Each neuron creates a voltage difference around itself by having
 different chemical combinations of ions. Perhaps, this is the most
@@ -72,7 +72,7 @@ mathematical function. And the dendrites could be visualized as the
 input to the node itself either directly or from another neuron. The
 process of connecting one node's output as input to another neuron could
 be visualized as the synaptic connection. The fig
-[\[fig:ann\]](images/ann){reference-type="ref" reference="fig:ann"} shows
+[\[fig:ann\]](images/ann){reference-type="ref" reference="fig:ann") shows
 the similarities between the biological neuron and a neuron in ANN.
 
 With the structure of ANN ready, the model needs a learning mechanism.
@@ -255,7 +255,7 @@ addresses any known limitations.
 Current Trends
 ==============
 
-[\[current\_trends\]]{#current_trends label="current_trends"} The past
+[\[current\_trends\]]{#current_trends ) The past
 decade has seen a significant and rapid growth in the field of machine
 learning. With rapid expansion, there has been many tools and services
 built in order to make the learning process simple and easy to use. Each
@@ -298,12 +298,12 @@ machine learning services can also be a trained model for public access.
 Machine Learning Tools {#ml_tools}
 ----------------------
 
-[\[fig:classification\_tools\]]{images/classification_tools
-label="fig:classification_tools"}
+[\[fig:classification\_tools\]](images/classification_tools
+)
 
 Figure
 [\[fig:classification\_tools\]](images/classification_tools){reference-type="ref"
-reference="fig:classification_tools"} shows a broad classification of
+reference="fig:classification_tools") shows a broad classification of
 Machine Learning Tools. Each tool has been described briefly with
 various features offered by each of them in the subsequent sections.
 
@@ -323,15 +323,15 @@ specialist than experts. It is mainly built for three purposes :
 
 From figure
 [\[fig:classification\_tools\]](images/classification_tools){reference-type="ref"
-reference="fig:classification_tools"}, Weka is classified under GUI
+reference="fig:classification_tools"), Weka is classified under GUI
 which means that Weka is mainly used through a GUI. Weka offers four
 different interfaces with different use cases. Additionally, it also
 provides a command line interface. The figure
 [\[fig:weka\_gui\]](images/weka_gui){reference-type="ref"
-reference="fig:weka_gui"} shows the Weka dialog offering the different
+reference="fig:weka_gui") shows the Weka dialog offering the different
 interfaces.
 
-[\[fig:weka\_gui\]]{images/weka_gui label="fig:weka_gui"}
+[\[fig:weka\_gui\]](images/weka_gui )
 
 #### Explorer
 
@@ -350,8 +350,8 @@ data into the process.
 
 #### Experimenter
 
-[\[fig:weka\_experimenter\]]{images/weka_experimenter
-label="fig:weka_experimenter"}
+[\[fig:weka\_experimenter\]](images/weka_experimenter
+)
 
 Weka Experimenter, perhaps, is the most interesting part of Weka as it
 addresses the same issue which this thesis is addressing to.
@@ -359,7 +359,7 @@ Experimenter helps data scientists to find the right methods and
 parameters for a given data set. Weka also provides the capability of
 running the training process in a distributed environment. Figure
 [\[fig:weka\_experimenter\]](images/weka_experimenter){reference-type="ref"
-reference="fig:weka_experimenter"} is a screenshot from the Weka
+reference="fig:weka_experimenter") is a screenshot from the Weka
 Experimenter GUI [@TheWekaWorkbench].
 
 #### Workbench
@@ -378,7 +378,7 @@ to handle the whole learning process through GUI and drag and drop.
 Thus, it is fair to compare this service with other machine learning
 tools.
 
-[\[fig:ML\_studio\]]{images/ML_studio label="fig:ML_studio"}
+[\[fig:ML\_studio\]](images/ML_studio )
 
 Microsoft's ML Studio offers a complete solution. By complete it means
 that the (ML) studio covers all the machine learning processes within
@@ -390,7 +390,7 @@ hundreds of packages and algorithms.
 
 A close inspection at the figure
 [\[fig:ML\_studio\]](images/ML_studio){reference-type="ref"
-reference="fig:ML_studio"} reveals the GUI is designed to be very
+reference="fig:ML_studio") reveals the GUI is designed to be very
 intuitive. The GUI enforces the data scientist to make a flow diagram
 with their data-set as the starting point and consequently
 pre-processing functions and so on until the model is trained and saved.
@@ -496,10 +496,10 @@ instance, Facebook for face recognition, Amazon for alexa, etc. As most
 of the popular machine learning services come from Amazon, Google and
 Microsoft, it is fair to classify each services based on the provider.
 
-[\[fig:ML\_services\]]{images/ML_services label="fig:ML_services"}
+[\[fig:ML\_services\]](images/ML_services )
 
 The figure [\[fig:ML\_services\]](images/ML_services){reference-type="ref"
-reference="fig:ML_services"} displays a broad classification of modern
+reference="fig:ML_services") displays a broad classification of modern
 machine learning services based on their providers. There are more
 services available from these providers but only a few popular and
 relevant services have been chosen for analysis. Each service has been
@@ -538,7 +538,7 @@ regression algorithms [@aml].
 
 Microsoft provides two main services for machine learning. The first
 service is the Microsoft Machine Learning Studio which we discussed in
-section [2.2.2](#MLStudio){reference-type="ref" reference="MLStudio"}
+section [2.2.2](#MLStudio){reference-type="ref" reference="MLStudio")
 considering it as a tool. The second service is the Azure Machine
 Learning.
 
@@ -606,11 +606,11 @@ This will make it easier to further analyze and select a suitable set of
 tools and ideas which will be relevant to the requirements of data
 scientist and researchers. Table
 [\[table:compare\_mltools\]](#table:compare_mltools){reference-type="ref"
-reference="table:compare_mltools"} gives a complete summary of all the
+reference="table:compare_mltools") gives a complete summary of all the
 machine learning tools with their respective feature support.
 
 [\[table:compare\_mltools\]]{#table:compare_mltools
-label="table:compare_mltools"}
+)
 
   ------------------ ------------------------------- ------------------------------- ------------------------------------- ------------------------------- -------------------------------
   Language Support   Java                            python, R                       python , R, Java, Swift, Javascript   python                          Lua, python
@@ -625,10 +625,10 @@ Proposed Solution {#proposed_solution}
 =================
 
 From Chapter [\[current\_trends\]](#current_trends){reference-type="ref"
-reference="current_trends"} it is clear that the tools that help in
+reference="current_trends") it is clear that the tools that help in
 building neural network models are mostly open source with the exception
 of Microsoft ML Studio described in section
-[2.2.2](#MLStudio){reference-type="ref" reference="MLStudio"}. Most of
+[2.2.2](#MLStudio){reference-type="ref" reference="MLStudio"). Most of
 the machine learning services allows the use of open source solution
 with their services. The services themselves are closed source and the
 usage is mostly chargeable.
@@ -636,7 +636,7 @@ usage is mostly chargeable.
 While the modern machine learning tools are fundamental in today's
 machine learning community, the modern machine learning services
 described in section [2.3](#ML_services){reference-type="ref"
-reference="ML_services"} provide state of the art solutions with easy to
+reference="ML_services") provide state of the art solutions with easy to
 use environments. This can help to get the model building processes even
 faster than by using ML tools alone. As these services are proprietary,
 it is must to provide such state of the art solutions which are open
@@ -668,8 +668,8 @@ easier for future developments.
 ### The Big Picture {#big_picture}
 
 After inspecting section [2.2.2](#MLStudio){reference-type="ref"
-reference="MLStudio"} and section
-[2.3](#ML_services){reference-type="ref" reference="ML_services"}
+reference="MLStudio") and section
+[2.3](#ML_services){reference-type="ref" reference="ML_services")
 closely almost all services lack something. For instance, the ML studio
 does not offer automatic modelling based on the data available but
 Google's Cloud Auto ML offer that feature. Google's Cloud Auto ML lacks
@@ -776,14 +776,14 @@ With the help of above brief explanation about how important a flowchart
 can be, we will now discuss the proposed flow chart for the application
 in figure
 [\[fig:application\_flow\]](images/application_flow){reference-type="ref"
-reference="fig:application_flow"}. Each step represents individual
+reference="fig:application_flow"). Each step represents individual
 component along with the flow of the application.
 
 ![Source: \[Author,
-2018\]](images/application_flow.png){width="\textwidth"}
+2018\]](images/application_flow.png){width="\textwidth")
 
-[\[fig:application\_flow\]]{images/application_flow
-label="fig:application_flow"}
+[\[fig:application\_flow\]](images/application_flow
+)
 
 #### 1. Upload CSV
 
@@ -868,7 +868,7 @@ based GUI components, it makes it easier to visualize or create a
 road-map to build all the functionality of the platform from the
 perspective of the end user. Under section
 [3.1.2](#functional_aspects){reference-type="ref"
-reference="functional_aspects"} the minimum features and functionality
+reference="functional_aspects") the minimum features and functionality
 that has to be offered is realized, but they are just description by
 words and sentences. Hence, creating a prototype which takes into
 account of these functionalities, will be beneficial during the
@@ -907,12 +907,12 @@ transforming it simultaneously. It contains tools for data
 pre-processing such as **Add Column**, **Delete Column**, **Scale
 Data**, **Handle Null** and **Transform Data**.
 
-[\[fig:data\_preprocessing\]]{images/data_preprocessing
-label="fig:data_preprocessing"}
+[\[fig:data\_preprocessing\]](images/data_preprocessing
+)
 
 The figure
 [\[fig:data\_preprocessing\]](images/data_preprocessing){reference-type="ref"
-reference="fig:data_preprocessing"} display the complete view of the
+reference="fig:data_preprocessing") display the complete view of the
 page after the user is logged in and has navigated to the data
 pre-processing page. The leftmost vertical bar is used for navigation
 between different view and the top bar is used for actions such as
@@ -924,23 +924,23 @@ the view, the data pre-processing tool menu can be found. Clicking on
 any of these will result in opening the specific menu for further
 control and customization.
 
-[\[fig:add\_column\]]{images/add_column label="fig:add_column"}
+[\[fig:add\_column\]](images/add_column )
 
 From Figure
 [\[fig:data\_preprocessing\]](images/data_preprocessing){reference-type="ref"
-reference="fig:data_preprocessing"}, if the user clicks on *Add Column*
+reference="fig:data_preprocessing"), if the user clicks on *Add Column*
 menu then the menu would disappear and the *Add Column* view from figure
 [\[fig:add\_column\]](images/add_column){reference-type="ref"
-reference="fig:add_column"} will be shown. If the user click on *Delete
+reference="fig:add_column") will be shown. If the user click on *Delete
 Column* then the menu view transforms into the *Delete Column* view from
 the figure [\[fig:add\_column\]](images/add_column){reference-type="ref"
-reference="fig:add_column"}. If the user clicks on *Scale Data* or
+reference="fig:add_column"). If the user clicks on *Scale Data* or
 *Handle Null* then the menu view transforms into *Scale Data* or *Handle
 Null* respectively from the figure
 [\[fig:scale\_column\]](images/scale_column){reference-type="ref"
-reference="fig:scale_column"}.
+reference="fig:scale_column").
 
-[\[fig:scale\_column\]]{images/scale_column label="fig:scale_column"}
+[\[fig:scale\_column\]](images/scale_column )
 
 ### Build Network
 
@@ -951,26 +951,26 @@ Function** and choosing an **Optimization Method**.
 
 Figure
 [\[fig:feature\_columns\]](images/feature_columns){reference-type="ref"
-reference="fig:feature_columns"} is the default view when the user
+reference="fig:feature_columns") is the default view when the user
 navigates to data pre-processing page. This view lets the user to select
 the feature columns and set other initialization. Figure
 [\[fig:build\_layers\]](images/build_layers){reference-type="ref"
-reference="fig:build_layers"} allows the user to create multiple hidden
+reference="fig:build_layers") allows the user to create multiple hidden
 layers with flexibility to choose the number of neurons and activation
 function for each layer. Figure
 [\[fig:loss\_function\]](images/loss_function){reference-type="ref"
-reference="fig:loss_function"} lets the user select a loss function
+reference="fig:loss_function") lets the user select a loss function
 through a simple drop-down menu. Figure
 [\[fig:optimizer\]](images/optimizer){reference-type="ref"
-reference="fig:optimizer"} allows the user to select an optimization
+reference="fig:optimizer") allows the user to select an optimization
 function and also input the learning constant.
 
-[\[fig:feature\_columns\]]{images/feature_columns
-label="fig:feature_columns"}
+[\[fig:feature\_columns\]](images/feature_columns
+)
 
-[\[fig:build\_layers\]]{images/build_layers label="fig:build_layers"}
+[\[fig:build\_layers\]](images/build_layers )
 
-[\[fig:loss\_function\]]{images/loss_function label="fig:loss_function"}
+[\[fig:loss\_function\]](images/loss_function )
 
 ### Visualization
 
@@ -978,7 +978,7 @@ This view provides the user with the visualization of the training
 process.
 
 Figure [\[fig:visualization\]](images/visualization){reference-type="ref"
-reference="fig:visualization"} shows how the visualization page is
+reference="fig:visualization") shows how the visualization page is
 expected to look like. Ideally the graphs shown in this figure should be
 generated dynamically and in real-time while the training process is
 running.
@@ -987,24 +987,24 @@ Implementation
 ==============
 
 Even though Chapter [3](#proposed_solution){reference-type="ref"
-reference="proposed_solution"} provides a promising solution, it is just
+reference="proposed_solution") provides a promising solution, it is just
 an unrealized concept. The final solution primarily depends on the
 implementation details of the proposed platform from section
 [3.1.2.1](#development_components){reference-type="ref"
-reference="development_components"} and secondarily the technology stack
+reference="development_components") and secondarily the technology stack
 used for achieving the functionalities proposed in section
 [3.1.2.2](#application_specific){reference-type="ref"
-reference="application_specific"}. However, the proposed platform from
+reference="application_specific"). However, the proposed platform from
 [3.1.2.1](#development_components){reference-type="ref"
-reference="development_components"} should ideally provide an easy to
+reference="development_components") should ideally provide an easy to
 adapt environment which will remain agnostic to any change in the
 implementation details of section
 [3.1.2.2](#application_specific){reference-type="ref"
-reference="application_specific"} unless the tools remain mostly to
+reference="application_specific") unless the tools remain mostly to
 python based implementations. This ensures that the solution remains
 flexible.
 
-Chapter [4](#prototype){reference-type="ref" reference="prototype"}
+Chapter [4](#prototype){reference-type="ref" reference="prototype")
 provides a prototype only to the UI part of the proposed solution. It
 only proves its significant assistance in simplifying the thought
 process of design during the implementation process but not as prototype
@@ -1118,7 +1118,7 @@ interaction and letting the backend focus on more important aspects.
 Since the choice of programming language for backend was decided as
 python under the section
 [5.1.1](#programming_language){reference-type="ref"
-reference="programming_language"}, the frameworks discussed in this
+reference="programming_language"), the frameworks discussed in this
 section are based on python with one exception of nodeJS. Some of the
 most powerful web frameworks for python are Django, Flask, Tornado etc.
 
@@ -1156,7 +1156,7 @@ most powerful web frameworks for python are Django, Flask, Tornado etc.
     which enables the use of JavaScript at the server side. As already
     discussed in the section
     [5.1.1](#programming_language){reference-type="ref"
-    reference="programming_language"}, NodeJS is relatively new to other
+    reference="programming_language"), NodeJS is relatively new to other
     options available. It can be very helpful and easier to implement
     web socket servers in NodeJS [@nodejs].
 
@@ -1202,9 +1202,9 @@ manager which is used to manage libraries for node based applications in
 both the frontend and the backend.
 
 From section [3.1.1](#big_picture){reference-type="ref"
-reference="big_picture"} in chapter
+reference="big_picture") in chapter
 [3](#proposed_solution){reference-type="ref"
-reference="proposed_solution"}, part of the solution is to make the
+reference="proposed_solution"), part of the solution is to make the
 solution available for different platform. To achieve this for a web
 application the only part of the application that can be distributed for
 different platforms is the client application. A JavaScript bundler
@@ -1216,20 +1216,20 @@ Webpack is also required to compile ReactJS application into ECMAScript
 ### Conclusion
 
 From section [5.1.1](#programming_language){reference-type="ref"
-reference="programming_language"}, **Python** clearly stands out from
+reference="programming_language"), **Python** clearly stands out from
 the rest for backend programming. With its strong community from both
 machine learning and web development it is certain that the
 implementation process gets fairly simple. **JavaScript** remains the
 choice of the client side programming indefinitely.
 
 From section [5.1.2](#frameworks){reference-type="ref"
-reference="frameworks"} under subsection **Frontend Frameworks**,
+reference="frameworks") under subsection **Frontend Frameworks**,
 **ReactJS** is the choice of frontend framework. The reason behind this
 choice is the flexibility that ReactJS provides over the other two
 frameworks.
 
 From section [5.1.2](#frameworks){reference-type="ref"
-reference="frameworks"} under subsection **Backend Frameworks**,
+reference="frameworks") under subsection **Backend Frameworks**,
 **Django** is the best framework of choice due to its huge support from
 the community and its simplicity in maintaining large projects. Since
 Django is not asynchronous, and some tasks during the training processes
@@ -1238,16 +1238,16 @@ it. Hence, **Celery** can be used along with Django for executing any
 time consuming tasks.
 
 From section [5.1.3](#databases){reference-type="ref"
-reference="databases"}, even though the default option appears to be
+reference="databases"), even though the default option appears to be
 MySQl as it provides all the features for most database requirements and
 also easily scalable, **SQLite** provides a very simple solution as the
 initial implementation requires very little database interaction.
 
 With respect to the libraries that are to be used for neural network
 training and data pre-processing, section
-[2.2](#ml_tools){reference-type="ref" reference="ml_tools"} from chapter
+[2.2](#ml_tools){reference-type="ref" reference="ml_tools") from chapter
 [\[current\_trends\]](#current_trends){reference-type="ref"
-reference="current_trends"} discusses all the state of the art tools
+reference="current_trends") discusses all the state of the art tools
 available for machine learning purposes. Some of them such as WEKA, ML
 Studio from Microsoft are not suitable for integration in the project.
 The other option left are TensorFlow, Pytorch, Scikit Learn etc.
@@ -1295,12 +1295,12 @@ designing the client side are default.
 System Architecture
 -------------------
 
-[\[fig:system\_architecture\]]{images/system_architecture
-label="fig:system_architecture"}
+[\[fig:system\_architecture\]](images/system_architecture
+)
 
 Figure
 [\[fig:system\_architecture\]](images/system_architecture){reference-type="ref"
-reference="fig:system_architecture"} shows a three layered client-server
+reference="fig:system_architecture") shows a three layered client-server
 architecture. The first layer is the end user or the client. The middle
 layer consists of the HTTP server and a Websocket server. The last layer
 or the third layer consists of the database and an asynchronous
@@ -1356,7 +1356,7 @@ channel in the Redis Database.
 
 Using the figure
 [\[fig:system\_architecture\]](images/system_architecture){reference-type="ref"
-reference="fig:system_architecture"} the flow of the process in this
+reference="fig:system_architecture") the flow of the process in this
 architecture is explained with an example action of an end user clicking
 on the start training button on the client side. This particular example
 is chosen as this process involves the entire system and hence the flow
@@ -1396,16 +1396,16 @@ could be explained in its entirely.
 Frontend Development and Build Process
 --------------------------------------
 
-[\[fig:build\_architecture\]]{images/build_architecture
-label="fig:build_architecture"}
+[\[fig:build\_architecture\]](images/build_architecture
+)
 
 Due to the use of ReactJS for the client side application and also to
 provide the feature of bundling the client side application in different
 forms as described in section [3.1.1](#big_picture){reference-type="ref"
-reference="big_picture"}, this implementation uses a build automation
+reference="big_picture"), this implementation uses a build automation
 framework called Webpack. Figure
 [\[fig:build\_architecture\]](images/build_architecture){reference-type="ref"
-reference="fig:build_architecture"} depicts an in depth view of the
+reference="fig:build_architecture") depicts an in depth view of the
 development and build process. Since Django's architecture follows
 dividing application into smaller application based on the
 functionality, it only makes more sense to keep source files of the
@@ -1413,7 +1413,7 @@ respective frontend code to their backend applications.
 
 In figure
 [\[fig:build\_architecture\]](images/build_architecture){reference-type="ref"
-reference="fig:build_architecture"} one can notice two react
+reference="fig:build_architecture") one can notice two react
 directories. One of the react directory stays in the same level as
 Django applications and the other react directory in inside every Django
 application. The outer react directory consists of different Webpack
@@ -1455,68 +1455,68 @@ anchor=west, calign=first, inner xsep=7pt, edge path= (!u.south west)
 +(7.5pt,0) \|- (.child anchor) pic folder ; , file/.style=edge path=
 (!u.south west) +(7.5pt,0) \|- (.child anchor) ;, inner xsep=2pt,font= ,
 before typesetting nodes= if n=1 insert before=\[,phantom\] , fit=band,
-before computing xy=l=14pt, \[[thesis \[[app]{style="color: orange"},
-label=right:[...Root App]{style="color: green"}
-\[[app]{style="color: orange"}, label=right:[...Django and Celery
-Configuration Directory]{style="color: green"}
-\[[celery.py]{style="color: purple"},file\]
-\[[settings.py]{style="color: purple"},file\]
-\[[urls.py]{style="color: purple"},file\]
-\[[wsgi.py]{style="color: purple"},file\] \]
-\[[main]{style="color: orange"}, label=right:[...Django Main
-App]{style="color: green"} \[[react]{style="color: orange"}
-\[[css]{style="color: orange"}, label=right:[...Frontend development
-files reside here]{style="color: green"}
-\[[main.css]{style="color: red"},file\] \] \[[js]{style="color: orange"}
-\[[base.js]{style="color: blue"},file\]
-\[[components]{style="color: orange"}
-\[[actions.js]{style="color: blue"},file\] \] \] \]
-\[[static]{style="color: orange"}, label=right:[...Frontend compiled
-files reside here]{style="color: green"} \[[main]{style="color: orange"}
-\[[scripts]{style="color: orange"}
-\[[base.bundle.js]{style="color: blue"},file\] \]
-\[[styles]{style="color: orange"}
-\[[main.css]{style="color: red"},file\] \] \] \]
-\[[templates]{style="color: orange"}, label=right:[...Skeleton HTML
-files for each page]{style="color: green"}
-\[[base.html]{style="color: red"},file\] \]
-\[[migrations]{style="color: orange"}, label=right: [...Database
-migration scripts]{style="color: green"}
-\[[0001\_initial.py]{style="color: purple"},file\] \]
-\[[admin.py]{style="color: purple"},file\]
-\[[apps.py]{style="color: purple"},file\]
-\[[models.py]{style="color: purple"},file\]
-\[[tasks.py]{style="color: purple"},file\]
-\[[tests.py]{style="color: purple"},file\]
-\[[urls.py]{style="color: purple"},file\]
-\[[views.py]{style="color: purple"},file\] \]
-\[[react]{style="color: orange"},label=right:[...Webpack configuration
-files with start and build scripts]{style="color: green"}
-\[[config]{style="color: orange"}
-\[[webpack.config.js]{style="color: blue"},file\] \]
-\[[polyfills.js]{style="color: blue"},file\]
-\[[scripts]{style="color: orange"}
-\[[build.js]{style="color: blue"},file\]
-\[[start.js]{style="color: blue"},file\] \]
-\[[tests]{style="color: orange"}\] \]
-\[[socket\_app]{style="color: orange"}, label=right:[...Socket server
-app]{style="color: green"} \[[node\_modules]{style="color: orange"},
-label=right:[...nodeJS library directory]{style="color: green"}\]
-\[[package.json]{style="color: red"},file\]
-\[[package-lock.json]{style="color: red"},file\]
-\[[server.js]{style="color: blue"},file\] \]
-\[[media]{style="color: orange"} \[[csv]{style="color: orange"}\] \]
-\[[node\_modules]{style="color: orange"}, label=right:[...Frontend and
-reactJS dependency library]{style="color: green"}\]
-\[[package.json]{style="color: red"},file\]
-\[[package-lock.json]{style="color: red"},file\]
-\[[requirements.txt]{style="color: red"},file\]
-\[[manage.py]{style="color: purple"},file, label=right:[...Django
-management script]{style="color: green"}\]
-\[[db.sqlite3]{style="color: red"},file, label=right:[...SQLite database
-file]{style="color: green"}\] \[[static]{style="color: orange"}\] \]
-\[[env]{style="color: orange"}, label=right:[...python library
-directory]{style="color: green"}\] \]]{.smallcaps}
+before computing xy=l=14pt, \[[thesis \[[app]{style="color: orange"),
+)
+\[[app]{style="color: orange"), label=right:[...Django and Celery
+Configuration Directory]{style="color: green")
+\[[celery.py]{style="color: purple"),file\]
+\[[settings.py]{style="color: purple"),file\]
+\[[urls.py]{style="color: purple"),file\]
+\[[wsgi.py]{style="color: purple"),file\] \]
+\[[main]{style="color: orange"), label=right:[...Django Main
+App]{style="color: green") \[[react]{style="color: orange")
+\[[css]{style="color: orange"), label=right:[...Frontend development
+files reside here]{style="color: green")
+\[[main.css]{style="color: red"),file\] \] \[[js]{style="color: orange")
+\[[base.js]{style="color: blue"),file\]
+\[[components]{style="color: orange")
+\[[actions.js]{style="color: blue"),file\] \] \] \]
+\[[static]{style="color: orange"), label=right:[...Frontend compiled
+files reside here]{style="color: green") \[[main]{style="color: orange")
+\[[scripts]{style="color: orange")
+\[[base.bundle.js]{style="color: blue"),file\] \]
+\[[styles]{style="color: orange")
+\[[main.css]{style="color: red"),file\] \] \] \]
+\[[templates]{style="color: orange"), label=right:[...Skeleton HTML
+files for each page]{style="color: green")
+\[[base.html]{style="color: red"),file\] \]
+\[[migrations]{style="color: orange"), label=right: [...Database
+migration scripts]{style="color: green")
+\[[0001\_initial.py]{style="color: purple"),file\] \]
+\[[admin.py]{style="color: purple"),file\]
+\[[apps.py]{style="color: purple"),file\]
+\[[models.py]{style="color: purple"),file\]
+\[[tasks.py]{style="color: purple"),file\]
+\[[tests.py]{style="color: purple"),file\]
+\[[urls.py]{style="color: purple"),file\]
+\[[views.py]{style="color: purple"),file\] \]
+\[[react]{style="color: orange"),label=right:[...Webpack configuration
+files with start and build scripts]{style="color: green")
+\[[config]{style="color: orange")
+\[[webpack.config.js]{style="color: blue"),file\] \]
+\[[polyfills.js]{style="color: blue"),file\]
+\[[scripts]{style="color: orange")
+\[[build.js]{style="color: blue"),file\]
+\[[start.js]{style="color: blue"),file\] \]
+\[[tests]{style="color: orange")\] \]
+\[[socket\_app]{style="color: orange"), label=right:[...Socket server
+app]{style="color: green") \[[node\_modules]{style="color: orange"),
+)\]
+\[[package.json]{style="color: red"),file\]
+\[[package-lock.json]{style="color: red"),file\]
+\[[server.js]{style="color: blue"),file\] \]
+\[[media]{style="color: orange") \[[csv]{style="color: orange")\] \]
+\[[node\_modules]{style="color: orange"), label=right:[...Frontend and
+reactJS dependency library]{style="color: green")\]
+\[[package.json]{style="color: red"),file\]
+\[[package-lock.json]{style="color: red"),file\]
+\[[requirements.txt]{style="color: red"),file\]
+\[[manage.py]{style="color: purple"),file, label=right:[...Django
+management script]{style="color: green")\]
+\[[db.sqlite3]{style="color: red"),file, label=right:[...SQLite database
+file]{style="color: green")\] \[[static]{style="color: orange")\] \]
+\[[env]{style="color: orange"), label=right:[...python library
+directory]{style="color: green")\] \]]{.smallcaps}
 
 ### Setup Guide
 
@@ -1534,9 +1534,9 @@ celery worker setup process.
 **Step 1:** Open the terminal and change directory into the project root
 directory mentioned in section
 [5.4.1](#project_structure){reference-type="ref"
-reference="project_structure"}.
+reference="project_structure").
 
-``` {.bash language="bash"}
+``` {.bash language="bash")
     $ cd ~/Neural-Networks-GUI/app/
 ```
 
@@ -1545,7 +1545,7 @@ applications. Creating a virtual environment ensures that all the
 packages required for the project reside at one place and does not
 disturb the system packages.
 
-``` {.bash language="bash"}
+``` {.bash language="bash")
     $ pip install virtualenv
     $ virtualenv ../env
 ```
@@ -1554,7 +1554,7 @@ disturb the system packages.
 linux shell to use the virtual environment as source for python binaries
 and libraries.
 
-``` {.bash language="bash"}
+``` {.bash language="bash")
     $ . ../env/bin/activate
 ```
 
@@ -1562,21 +1562,21 @@ and libraries.
 dependencies are stored in the **requirements.txt**. This step has to be
 done only after enabling the virtual environment.
 
-``` {.bash language="bash"}
+``` {.bash language="bash")
     (env)$ pip install -r requirements.txt
 ```
 
 **Step 5:** Database Migration is required to create all the necessary
 database tables.
 
-``` {.bash language="bash"}
+``` {.bash language="bash")
     (env)$ python manage.py migrate
 ```
 
 **Step 6:** Start Server. After the migrations are complete, start the
 Django web server by the command
 
-``` {.bash language="bash"}
+``` {.bash language="bash")
     (env)$ python manage.py runserver
 ```
 
@@ -1586,13 +1586,13 @@ Before starting the celery workers, RabbitMQ message queue has to be
 installed and configured.\
 **Step 1:** Install RabbitMQ server.
 
-``` {.bash language="bash"}
+``` {.bash language="bash")
     $ sudo apt-get install rabbitmq-server
 ```
 
 **Step 2:** Configure the RabbitMQ server as mentioned below.
 
-``` {.bash language="bash"}
+``` {.bash language="bash")
     $ sudo rabbitmqctl add_user thesis shrink
     $ sudo rabbitmqctl add_vhost thesishost
     $ sudo rabbitmqctl set_user_tags thesis thesistag
@@ -1605,7 +1605,7 @@ setup guide to activate the environment.
 
 Start the Celery worker process.
 
-``` {.bash language="bash"}
+``` {.bash language="bash")
     (env)$ celery -A app.celery_app worker -l info
 ```
 
@@ -1615,7 +1615,7 @@ Before starting the socket server, make sure to install Redis server.
 
 **Step 1:** Install Redis server. Open terminal in the home folder.
 
-``` {.bash language="bash"}
+``` {.bash language="bash")
     $ wget http://download.redis.io/releases/redis-4.0.10.tar.gz
     $ tar xzf redis-4.0.10.tar.gz
     $ cd redis-4.0.10
@@ -1626,14 +1626,14 @@ Before starting the socket server, make sure to install Redis server.
 **Step 2:** Install the NodeJS dependencies. Open a new terminal and
 change directory to the project root.
 
-``` {.bash language="bash"}
+``` {.bash language="bash")
     $ cd socket_app
     $ npm install
 ```
 
 **Step 3:** Start socket server.
 
-``` {.bash language="bash"}
+``` {.bash language="bash")
     $ npm start
 ```
 
@@ -1642,46 +1642,46 @@ change directory to the project root.
 **Step 1:** To install the frontend dependencies, open the terminal and
 change directory to project root.
 
-``` {.bash language="bash"}
+``` {.bash language="bash")
     $ npm install
 ```
 
 **Step 2:** Start the webpack server to listen to changes in the source
 files.
 
-``` {.bash language="bash"}
+``` {.bash language="bash")
     $ npm start
 ```
 
 Application Screenshots
 -----------------------
 
-[\[fig:ss\_login\]]{images/ss_login label="fig:ss_login"}
+[\[fig:ss\_login\]](images/ss_login )
 
-[\[fig:ss\_upload\_csv\]]{images/ss_upload_csv label="fig:ss_upload_csv"}
+[\[fig:ss\_upload\_csv\]](images/ss_upload_csv )
 
-[\[fig:ss\_data\_preprocessing\]]{images/ss_data_preprocessing
-label="fig:ss_data_preprocessing"}
+[\[fig:ss\_data\_preprocessing\]](images/ss_data_preprocessing
+)
 
-[\[fig:ss\_add\_delete\_transform\_column\]]{images/ss_add_delete_transform_column
-label="fig:ss_add_delete_transform_column"}
+[\[fig:ss\_add\_delete\_transform\_column\]](images/ss_add_delete_transform_column
+)
 
-[\[fig:ss\_handle\_null\_scale\_data\]]{images/ss_handle_null_scale_data
-label="fig:ss_handle_null_scale_data"}
+[\[fig:ss\_handle\_null\_scale\_data\]](images/ss_handle_null_scale_data
+)
 
-[\[fig:ss\_feature\_columns\]]{images/ss_feature_columns
-label="fig:ss_feature_columns"}
+[\[fig:ss\_feature\_columns\]](images/ss_feature_columns
+)
 
-[\[fig:ss\_build\_layers\]]{images/ss_build_layers
-label="fig:ss_build_layers"}
+[\[fig:ss\_build\_layers\]](images/ss_build_layers
+)
 
-[\[fig:ss\_loss\_function\]]{images/ss_loss_function
-label="fig:ss_loss_function"}
+[\[fig:ss\_loss\_function\]](images/ss_loss_function
+)
 
-[\[fig:ss\_optimizer\]]{images/ss_optimizer label="fig:ss_optimizer"}
+[\[fig:ss\_optimizer\]](images/ss_optimizer )
 
-[\[fig:ss\_visualization\]]{images/ss_visualization
-label="fig:ss_visualization"}
+[\[fig:ss\_visualization\]](images/ss_visualization
+)
 
 Evaluation
 ==========
@@ -1694,7 +1694,7 @@ to compare the current implementation with the existing tools and
 services in its entirety. Although its possible to compare some of the
 basic functionalities, the current implementation supports and also
 compares the big picture discussed in section
-[3.1.1](#big_picture){reference-type="ref" reference="big_picture"} with
+[3.1.1](#big_picture){reference-type="ref" reference="big_picture") with
 the existing state of the art machine learning tools and services.
 
 Evaluation By Comparison
@@ -1728,15 +1728,15 @@ GUI.\
 function for training and also choose the class column.\
 **Step 5:** Click on the start button to start the training process.
 
-[\[fig:weka\_training\_results\]]{images/weka_training_results
-label="fig:weka_training_results"}
+[\[fig:weka\_training\_results\]](images/weka_training_results
+)
 
 #### Results
 
 The time taken from the start till the model being trained is
 approximately **5 minutes**. From the figure
 [\[fig:weka\_training\_results\]](images/weka_training_results){reference-type="ref"
-reference="fig:weka_training_results"}, the time taken just for training
+reference="fig:weka_training_results"), the time taken just for training
 the network is **0.13 seconds**.
 
 With Weka, the total time taken to train the data-set is very less. But
@@ -1755,18 +1755,18 @@ of data-set it could take significantly longer.
 
 ### Microsoft's ML Studio
 
-[\[fig:ML\_studio\_training\]]{images/ML_studio_training
-label="fig:ML_studio_training"}
+[\[fig:ML\_studio\_training\]](images/ML_studio_training
+)
 
 Since Microsoft's ML studio is using the drag and drop approach to build
 a training model, it requires some learning time. The overall time taken
 to train the model is approximately **30 minutes**. From figure
 [\[fig:ML\_studio\_results\]](images/ML_studio_results){reference-type="ref"
-reference="fig:ML_studio_results"} the training process itself took
+reference="fig:ML_studio_results") the training process itself took
 nearly **30 seconds**.
 
-[\[fig:ML\_studio\_results\]]{images/ML_studio_results
-label="fig:ML_studio_results"}
+[\[fig:ML\_studio\_results\]](images/ML_studio_results
+)
 
 ### Current Implementation
 
@@ -1790,7 +1790,7 @@ Future Scope
 ------------
 
 Section [3.1.1](#big_picture){reference-type="ref"
-reference="big_picture"} describes the proposed solution as a big
+reference="big_picture") describes the proposed solution as a big
 picture. The solution is a platform that has the potential to be under
 continuous development, adapting to the changing needs and adding new
 features. The current implementation with the choice of technologies
