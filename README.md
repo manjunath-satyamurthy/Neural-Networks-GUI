@@ -50,7 +50,7 @@ axon to the dendrite of another neuron. The figure
 reference="bio_neuron") shows a typical biological neuron with the
 parts as described above [@neuronworking].
 
-[bio_neuron](images/bio_neuron )
+[bio_neuron](images/bio_neuron)
 
 Each neuron creates a voltage difference around itself by having
 different chemical combinations of ions. Perhaps, this is the most
@@ -255,7 +255,7 @@ addresses any known limitations.
 Current Trends
 ==============
 
-[current_trends]{#current_trends ) The past
+[current_trends]{#current_trends) The past
 decade has seen a significant and rapid growth in the field of machine
 learning. With rapid expansion, there has been many tools and services
 built in order to make the learning process simple and easy to use. Each
@@ -298,8 +298,7 @@ machine learning services can also be a trained model for public access.
 Machine Learning Tools {#ml_tools}
 ----------------------
 
-[classification_tools](images/classification_tools
-)
+[classification_tools](images/classification_tools)
 
 Figure
 [classification_tools](images/classification_tools){reference-type="ref"
@@ -331,7 +330,7 @@ provides a command line interface. The figure
 reference="weka_gui") shows the Weka dialog offering the different
 interfaces.
 
-[weka_gui](images/weka_gui )
+[weka_gui](images/weka_gui)
 
 #### Explorer
 
@@ -350,8 +349,7 @@ data into the process.
 
 #### Experimenter
 
-[weka_experimenter](images/weka_experimenter
-)
+[weka_experimenter](images/weka_experimenter)
 
 Weka Experimenter, perhaps, is the most interesting part of Weka as it
 addresses the same issue which this thesis is addressing to.
@@ -378,7 +376,7 @@ to handle the whole learning process through GUI and drag and drop.
 Thus, it is fair to compare this service with other machine learning
 tools.
 
-[ML_studio](images/ML_studio )
+[ML_studio](images/ML_studio)
 
 Microsoft's ML Studio offers a complete solution. By complete it means
 that the (ML) studio covers all the machine learning processes within
@@ -496,7 +494,7 @@ instance, Facebook for face recognition, Amazon for alexa, etc. As most
 of the popular machine learning services come from Amazon, Google and
 Microsoft, it is fair to classify each services based on the provider.
 
-[ML_services](images/ML_services )
+[ML_services](images/ML_services)
 
 The figure [ML_services](images/ML_services){reference-type="ref"
 reference="ML_services") displays a broad classification of modern
@@ -609,8 +607,7 @@ scientist and researchers. Table
 reference="table:compare_mltools") gives a complete summary of all the
 machine learning tools with their respective feature support.
 
-[table:compare_mltools]{#table:compare_mltools
-)
+[table:compare_mltools]{#table:compare_mltools)
 
   ------------------ ------------------------------- ------------------------------- ------------------------------------- ------------------------------- -------------------------------
   Language Support   Java                            python, R                       python , R, Java, Swift, Javascript   python                          Lua, python
@@ -782,8 +779,7 @@ component along with the flow of the application.
 ![Source: Author,
 2018](images/application_flow.png){width="\textwidth")
 
-[application_flow](images/application_flow
-)
+[application_flow](images/application_flow)
 
 #### 1. Upload CSV
 
@@ -907,8 +903,7 @@ transforming it simultaneously. It contains tools for data
 pre-processing such as **Add Column**, **Delete Column**, **Scale
 Data**, **Handle Null** and **Transform Data**.
 
-[data_preprocessing](images/data_preprocessing
-)
+[data_preprocessing](images/data_preprocessing)
 
 The figure
 [data_preprocessing](images/data_preprocessing){reference-type="ref"
@@ -924,7 +919,7 @@ the view, the data pre-processing tool menu can be found. Clicking on
 any of these will result in opening the specific menu for further
 control and customization.
 
-[add_column](images/add_column )
+[add_column](images/add_column)
 
 From Figure
 [data_preprocessing](images/data_preprocessing){reference-type="ref"
@@ -940,7 +935,7 @@ Null* respectively from the figure
 [scale_column](images/scale_column){reference-type="ref"
 reference="scale_column").
 
-[scale_column](images/scale_column )
+[scale_column](images/scale_column)
 
 ### Build Network
 
@@ -965,12 +960,11 @@ through a simple drop-down menu. Figure
 reference="optimizer") allows the user to select an optimization
 function and also input the learning constant.
 
-[feature_columns](images/feature_columns
-)
+[feature_columns](images/feature_columns)
 
-[build_layers](images/build_layers )
+[build_layers](images/build_layers)
 
-[loss_function](images/loss_function )
+[loss_function](images/loss_function)
 
 ### Visualization
 
@@ -1295,8 +1289,7 @@ designing the client side are default.
 System Architecture
 -------------------
 
-[system_architecture](images/system_architecture
-)
+[system_architecture](images/system_architecture)
 
 Figure
 [system_architecture](images/system_architecture){reference-type="ref"
@@ -1396,8 +1389,7 @@ could be explained in its entirely.
 Frontend Development and Build Process
 --------------------------------------
 
-[build_architecture](images/build_architecture
-)
+[build_architecture](images/build_architecture)
 
 Due to the use of ReactJS for the client side application and also to
 provide the feature of bundling the client side application in different
@@ -1455,8 +1447,7 @@ anchor=west, calign=first, inner xsep=7pt, edge path= (!u.south west)
 +(7.5pt,0) \|- (.child anchor) pic folder ; , file/.style=edge path=
 (!u.south west) +(7.5pt,0) \|- (.child anchor) ;, inner xsep=2pt,font= ,
 before typesetting nodes= if n=1 insert before=,phantom , fit=band,
-before computing xy=l=14pt, [thesis [app]{style="color: orange"),
-)
+before computing xy=l=14pt, [thesis [app]{style="color: orange"),)
 [app]{style="color: orange"), label=right:[...Django and Celery
 Configuration Directory]{style="color: green")
 [celery.py]{style="color: purple"),file
@@ -1500,8 +1491,7 @@ files with start and build scripts]{style="color: green")
 [start.js]{style="color: blue"),file 
 [tests]{style="color: orange") 
 [socket_app]{style="color: orange"), label=right:[...Socket server
-app]{style="color: green") [node_modules]{style="color: orange"),
-)
+app]{style="color: green") [node_modules]{style="color: orange"),)
 [package.json]{style="color: red"),file
 [package-lock.json]{style="color: red"),file
 [server.js]{style="color: blue"),file 
@@ -1656,32 +1646,25 @@ files.
 Application Screenshots
 -----------------------
 
-[ss_login](images/ss_login )
+[ss_login](images/ss_login)
 
-[ss_upload_csv](images/ss_upload_csv )
+[ss_upload_csv](images/ss_upload_csv)
 
-[ss_data_preprocessing](images/ss_data_preprocessing
-)
+[ss_data_preprocessing](images/ss_data_preprocessing)
 
-[ss_add_delete_transform_column](images/ss_add_delete_transform_column
-)
+[ss_add_delete_transform_column](images/ss_add_delete_transform_column)
 
-[ss_handle_null_scale_data](images/ss_handle_null_scale_data
-)
+[ss_handle_null_scale_data](images/ss_handle_null_scale_data)
 
-[ss_feature_columns](images/ss_feature_columns
-)
+[ss_feature_columns](images/ss_feature_columns)
 
-[ss_build_layers](images/ss_build_layers
-)
+[ss_build_layers](images/ss_build_layers)
 
-[ss_loss_function](images/ss_loss_function
-)
+[ss_loss_function](images/ss_loss_function)
 
-[ss_optimizer](images/ss_optimizer )
+[ss_optimizer](images/ss_optimizer)
 
-[ss_visualization](images/ss_visualization
-)
+[ss_visualization](images/ss_visualization)
 
 Evaluation
 ==========
@@ -1728,8 +1711,7 @@ GUI.\
 function for training and also choose the class column.\
 **Step 5:** Click on the start button to start the training process.
 
-[weka_training_results](images/weka_training_results
-)
+[weka_training_results](images/weka_training_results)
 
 #### Results
 
@@ -1755,8 +1737,7 @@ of data-set it could take significantly longer.
 
 ### Microsoft's ML Studio
 
-[ML_studio_training](images/ML_studio_training
-)
+[ML_studio_training](images/ML_studio_training)
 
 Since Microsoft's ML studio is using the drag and drop approach to build
 a training model, it requires some learning time. The overall time taken
@@ -1765,8 +1746,7 @@ to train the model is approximately **30 minutes**. From figure
 reference="ML_studio_results") the training process itself took
 nearly **30 seconds**.
 
-[ML_studio_results](images/ML_studio_results
-)
+[ML_studio_results](images/ML_studio_results)
 
 ### Current Implementation
 
