@@ -46,11 +46,11 @@ The dendrites and axon together help in communicating with other
 neurons. This communication happens through a connection called synaptic
 connection. This connection typically consists of one end of a neuron's
 axon to the dendrite of another neuron. The figure
-![bio_neuron](/images/bio_neuron.png){reference-type="ref"
+[bio_neuron](/images/bio_neuron.png){reference-type="ref"
 reference="bio_neuron") shows a typical biological neuron with the
 parts as described above [@neuronworking].
 
-[bio_neuron](/images/bio_neuron.png)
+![bio_neuron](/images/bio_neuron.png)
 
 Each neuron creates a voltage difference around itself by having
 different chemical combinations of ions. Perhaps, this is the most
