@@ -4,7 +4,7 @@ bibliography:
 nocite: '[@*]'
 ---
 
-![image](SRH.png){width="90%"}
+![image](images/SRH.png){width="90%"}
 
 ------------------------------------------------------------------------
 
