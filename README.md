@@ -46,11 +46,11 @@ The dendrites and axon together help in communicating with other
 neurons. This communication happens through a connection called synaptic
 connection. This connection typically consists of one end of a neuron's
 axon to the dendrite of another neuron. The figure
-[\[fig:bio\_neuron\]](images/bio_neuron){reference-type="ref"
-reference="fig:bio_neuron") shows a typical biological neuron with the
+[bio_neuron](images/bio_neuron){reference-type="ref"
+reference="bio_neuron") shows a typical biological neuron with the
 parts as described above [@neuronworking].
 
-[\[fig:bio\_neuron\]](images/bio_neuron )
+[bio_neuron](images/bio_neuron )
 
 Each neuron creates a voltage difference around itself by having
 different chemical combinations of ions. Perhaps, this is the most
@@ -72,7 +72,7 @@ mathematical function. And the dendrites could be visualized as the
 input to the node itself either directly or from another neuron. The
 process of connecting one node's output as input to another neuron could
 be visualized as the synaptic connection. The fig
-[\[fig:ann\]](images/ann){reference-type="ref" reference="fig:ann") shows
+[ann](images/ann){reference-type="ref" reference="ann") shows
 the similarities between the biological neuron and a neuron in ANN.
 
 With the structure of ANN ready, the model needs a learning mechanism.
@@ -255,7 +255,7 @@ addresses any known limitations.
 Current Trends
 ==============
 
-[\[current\_trends\]]{#current_trends ) The past
+[current_trends]{#current_trends ) The past
 decade has seen a significant and rapid growth in the field of machine
 learning. With rapid expansion, there has been many tools and services
 built in order to make the learning process simple and easy to use. Each
@@ -298,12 +298,12 @@ machine learning services can also be a trained model for public access.
 Machine Learning Tools {#ml_tools}
 ----------------------
 
-[\[fig:classification\_tools\]](images/classification_tools
+[classification_tools](images/classification_tools
 )
 
 Figure
-[\[fig:classification\_tools\]](images/classification_tools){reference-type="ref"
-reference="fig:classification_tools") shows a broad classification of
+[classification_tools](images/classification_tools){reference-type="ref"
+reference="classification_tools") shows a broad classification of
 Machine Learning Tools. Each tool has been described briefly with
 various features offered by each of them in the subsequent sections.
 
@@ -322,16 +322,16 @@ specialist than experts. It is mainly built for three purposes :
 3.  To compare different learning models suitable for a given data-set
 
 From figure
-[\[fig:classification\_tools\]](images/classification_tools){reference-type="ref"
-reference="fig:classification_tools"), Weka is classified under GUI
+[classification_tools](images/classification_tools){reference-type="ref"
+reference="classification_tools"), Weka is classified under GUI
 which means that Weka is mainly used through a GUI. Weka offers four
 different interfaces with different use cases. Additionally, it also
 provides a command line interface. The figure
-[\[fig:weka\_gui\]](images/weka_gui){reference-type="ref"
-reference="fig:weka_gui") shows the Weka dialog offering the different
+[weka_gui](images/weka_gui){reference-type="ref"
+reference="weka_gui") shows the Weka dialog offering the different
 interfaces.
 
-[\[fig:weka\_gui\]](images/weka_gui )
+[weka_gui](images/weka_gui )
 
 #### Explorer
 
@@ -350,7 +350,7 @@ data into the process.
 
 #### Experimenter
 
-[\[fig:weka\_experimenter\]](images/weka_experimenter
+[weka_experimenter](images/weka_experimenter
 )
 
 Weka Experimenter, perhaps, is the most interesting part of Weka as it
@@ -358,8 +358,8 @@ addresses the same issue which this thesis is addressing to.
 Experimenter helps data scientists to find the right methods and
 parameters for a given data set. Weka also provides the capability of
 running the training process in a distributed environment. Figure
-[\[fig:weka\_experimenter\]](images/weka_experimenter){reference-type="ref"
-reference="fig:weka_experimenter") is a screenshot from the Weka
+[weka_experimenter](images/weka_experimenter){reference-type="ref"
+reference="weka_experimenter") is a screenshot from the Weka
 Experimenter GUI [@TheWekaWorkbench].
 
 #### Workbench
@@ -378,7 +378,7 @@ to handle the whole learning process through GUI and drag and drop.
 Thus, it is fair to compare this service with other machine learning
 tools.
 
-[\[fig:ML\_studio\]](images/ML_studio )
+[ML_studio](images/ML_studio )
 
 Microsoft's ML Studio offers a complete solution. By complete it means
 that the (ML) studio covers all the machine learning processes within
@@ -389,8 +389,8 @@ save trained models for making prediction. The ML Studio comprises of
 hundreds of packages and algorithms.
 
 A close inspection at the figure
-[\[fig:ML\_studio\]](images/ML_studio){reference-type="ref"
-reference="fig:ML_studio") reveals the GUI is designed to be very
+[ML_studio](images/ML_studio){reference-type="ref"
+reference="ML_studio") reveals the GUI is designed to be very
 intuitive. The GUI enforces the data scientist to make a flow diagram
 with their data-set as the starting point and consequently
 pre-processing functions and so on until the model is trained and saved.
@@ -496,10 +496,10 @@ instance, Facebook for face recognition, Amazon for alexa, etc. As most
 of the popular machine learning services come from Amazon, Google and
 Microsoft, it is fair to classify each services based on the provider.
 
-[\[fig:ML\_services\]](images/ML_services )
+[ML_services](images/ML_services )
 
-The figure [\[fig:ML\_services\]](images/ML_services){reference-type="ref"
-reference="fig:ML_services") displays a broad classification of modern
+The figure [ML_services](images/ML_services){reference-type="ref"
+reference="ML_services") displays a broad classification of modern
 machine learning services based on their providers. There are more
 services available from these providers but only a few popular and
 relevant services have been chosen for analysis. Each service has been
@@ -605,11 +605,11 @@ can have clear idea about what features are provided by which tools.
 This will make it easier to further analyze and select a suitable set of
 tools and ideas which will be relevant to the requirements of data
 scientist and researchers. Table
-[\[table:compare\_mltools\]](#table:compare_mltools){reference-type="ref"
+[table:compare_mltools](#table:compare_mltools){reference-type="ref"
 reference="table:compare_mltools") gives a complete summary of all the
 machine learning tools with their respective feature support.
 
-[\[table:compare\_mltools\]]{#table:compare_mltools
+[table:compare_mltools]{#table:compare_mltools
 )
 
   ------------------ ------------------------------- ------------------------------- ------------------------------------- ------------------------------- -------------------------------
@@ -624,7 +624,7 @@ machine learning tools with their respective feature support.
 Proposed Solution {#proposed_solution}
 =================
 
-From Chapter [\[current\_trends\]](#current_trends){reference-type="ref"
+From Chapter [current_trends](#current_trends){reference-type="ref"
 reference="current_trends") it is clear that the tools that help in
 building neural network models are mostly open source with the exception
 of Microsoft ML Studio described in section
@@ -775,14 +775,14 @@ the problem, plan the solution, or solve the problem,, [@Flowcharts].
 With the help of above brief explanation about how important a flowchart
 can be, we will now discuss the proposed flow chart for the application
 in figure
-[\[fig:application\_flow\]](images/application_flow){reference-type="ref"
-reference="fig:application_flow"). Each step represents individual
+[application_flow](images/application_flow){reference-type="ref"
+reference="application_flow"). Each step represents individual
 component along with the flow of the application.
 
-![Source: \[Author,
-2018\]](images/application_flow.png){width="\textwidth")
+![Source: Author,
+2018](images/application_flow.png){width="\textwidth")
 
-[\[fig:application\_flow\]](images/application_flow
+[application_flow](images/application_flow
 )
 
 #### 1. Upload CSV
@@ -907,12 +907,12 @@ transforming it simultaneously. It contains tools for data
 pre-processing such as **Add Column**, **Delete Column**, **Scale
 Data**, **Handle Null** and **Transform Data**.
 
-[\[fig:data\_preprocessing\]](images/data_preprocessing
+[data_preprocessing](images/data_preprocessing
 )
 
 The figure
-[\[fig:data\_preprocessing\]](images/data_preprocessing){reference-type="ref"
-reference="fig:data_preprocessing") display the complete view of the
+[data_preprocessing](images/data_preprocessing){reference-type="ref"
+reference="data_preprocessing") display the complete view of the
 page after the user is logged in and has navigated to the data
 pre-processing page. The leftmost vertical bar is used for navigation
 between different view and the top bar is used for actions such as
@@ -924,23 +924,23 @@ the view, the data pre-processing tool menu can be found. Clicking on
 any of these will result in opening the specific menu for further
 control and customization.
 
-[\[fig:add\_column\]](images/add_column )
+[add_column](images/add_column )
 
 From Figure
-[\[fig:data\_preprocessing\]](images/data_preprocessing){reference-type="ref"
-reference="fig:data_preprocessing"), if the user clicks on *Add Column*
+[data_preprocessing](images/data_preprocessing){reference-type="ref"
+reference="data_preprocessing"), if the user clicks on *Add Column*
 menu then the menu would disappear and the *Add Column* view from figure
-[\[fig:add\_column\]](images/add_column){reference-type="ref"
-reference="fig:add_column") will be shown. If the user click on *Delete
+[add_column](images/add_column){reference-type="ref"
+reference="add_column") will be shown. If the user click on *Delete
 Column* then the menu view transforms into the *Delete Column* view from
-the figure [\[fig:add\_column\]](images/add_column){reference-type="ref"
-reference="fig:add_column"). If the user clicks on *Scale Data* or
+the figure [add_column](images/add_column){reference-type="ref"
+reference="add_column"). If the user clicks on *Scale Data* or
 *Handle Null* then the menu view transforms into *Scale Data* or *Handle
 Null* respectively from the figure
-[\[fig:scale\_column\]](images/scale_column){reference-type="ref"
-reference="fig:scale_column").
+[scale_column](images/scale_column){reference-type="ref"
+reference="scale_column").
 
-[\[fig:scale\_column\]](images/scale_column )
+[scale_column](images/scale_column )
 
 ### Build Network
 
@@ -950,35 +950,35 @@ process comprises of several small configurations such as choosing
 Function** and choosing an **Optimization Method**.
 
 Figure
-[\[fig:feature\_columns\]](images/feature_columns){reference-type="ref"
-reference="fig:feature_columns") is the default view when the user
+[feature_columns](images/feature_columns){reference-type="ref"
+reference="feature_columns") is the default view when the user
 navigates to data pre-processing page. This view lets the user to select
 the feature columns and set other initialization. Figure
-[\[fig:build\_layers\]](images/build_layers){reference-type="ref"
-reference="fig:build_layers") allows the user to create multiple hidden
+[build_layers](images/build_layers){reference-type="ref"
+reference="build_layers") allows the user to create multiple hidden
 layers with flexibility to choose the number of neurons and activation
 function for each layer. Figure
-[\[fig:loss\_function\]](images/loss_function){reference-type="ref"
-reference="fig:loss_function") lets the user select a loss function
+[loss_function](images/loss_function){reference-type="ref"
+reference="loss_function") lets the user select a loss function
 through a simple drop-down menu. Figure
-[\[fig:optimizer\]](images/optimizer){reference-type="ref"
-reference="fig:optimizer") allows the user to select an optimization
+[optimizer](images/optimizer){reference-type="ref"
+reference="optimizer") allows the user to select an optimization
 function and also input the learning constant.
 
-[\[fig:feature\_columns\]](images/feature_columns
+[feature_columns](images/feature_columns
 )
 
-[\[fig:build\_layers\]](images/build_layers )
+[build_layers](images/build_layers )
 
-[\[fig:loss\_function\]](images/loss_function )
+[loss_function](images/loss_function )
 
 ### Visualization
 
 This view provides the user with the visualization of the training
 process.
 
-Figure [\[fig:visualization\]](images/visualization){reference-type="ref"
-reference="fig:visualization") shows how the visualization page is
+Figure [visualization](images/visualization){reference-type="ref"
+reference="visualization") shows how the visualization page is
 expected to look like. Ideally the graphs shown in this figure should be
 generated dynamically and in real-time while the training process is
 running.
@@ -1246,7 +1246,7 @@ initial implementation requires very little database interaction.
 With respect to the libraries that are to be used for neural network
 training and data pre-processing, section
 [2.2](#ml_tools){reference-type="ref" reference="ml_tools") from chapter
-[\[current\_trends\]](#current_trends){reference-type="ref"
+[current_trends](#current_trends){reference-type="ref"
 reference="current_trends") discusses all the state of the art tools
 available for machine learning purposes. Some of them such as WEKA, ML
 Studio from Microsoft are not suitable for integration in the project.
@@ -1295,12 +1295,12 @@ designing the client side are default.
 System Architecture
 -------------------
 
-[\[fig:system\_architecture\]](images/system_architecture
+[system_architecture](images/system_architecture
 )
 
 Figure
-[\[fig:system\_architecture\]](images/system_architecture){reference-type="ref"
-reference="fig:system_architecture") shows a three layered client-server
+[system_architecture](images/system_architecture){reference-type="ref"
+reference="system_architecture") shows a three layered client-server
 architecture. The first layer is the end user or the client. The middle
 layer consists of the HTTP server and a Websocket server. The last layer
 or the third layer consists of the database and an asynchronous
@@ -1355,8 +1355,8 @@ channel in the Redis Database.
 ### Data Flow in the System
 
 Using the figure
-[\[fig:system\_architecture\]](images/system_architecture){reference-type="ref"
-reference="fig:system_architecture") the flow of the process in this
+[system_architecture](images/system_architecture){reference-type="ref"
+reference="system_architecture") the flow of the process in this
 architecture is explained with an example action of an end user clicking
 on the start training button on the client side. This particular example
 is chosen as this process involves the entire system and hence the flow
@@ -1371,22 +1371,22 @@ could be explained in its entirely.
     database.
 
 3.  **Create Task** - As soon as the session is verified, Django creates
-    a task\_id which is used to keep track of the task that is about to
+    a task_id which is used to keep track of the task that is about to
     be created.
 
 4.  **Executing Task** - After the tasks has been assigned to Celery by
-    Django, Django also returns the task\_id to the client.
+    Django, Django also returns the task_id to the client.
 
-5.  **Request Task Status** - Once the client receives the task\_id from
+5.  **Request Task Status** - Once the client receives the task_id from
     the Django HTTP server the client makes a websocket connection to
     the websocket server. Once the connection is established the client
-    sends the task\_id asking for updates on the task.
+    sends the task_id asking for updates on the task.
 
 6.  **Task Results** - While client makes the connection with the
     websocket server, Celery would have started the training process and
     at every iteration of the training process, it outputs the results
     into the database and also publishes it to the redis channel named
-    with the task\_id.
+    with the task_id.
 
 7.  **Receiving Results** - As and when celery outputs the results to
     the redis channel, the websocket server picks up the messages and
@@ -1396,7 +1396,7 @@ could be explained in its entirely.
 Frontend Development and Build Process
 --------------------------------------
 
-[\[fig:build\_architecture\]](images/build_architecture
+[build_architecture](images/build_architecture
 )
 
 Due to the use of ReactJS for the client side application and also to
@@ -1404,16 +1404,16 @@ provide the feature of bundling the client side application in different
 forms as described in section [3.1.1](#big_picture){reference-type="ref"
 reference="big_picture"), this implementation uses a build automation
 framework called Webpack. Figure
-[\[fig:build\_architecture\]](images/build_architecture){reference-type="ref"
-reference="fig:build_architecture") depicts an in depth view of the
+[build_architecture](images/build_architecture){reference-type="ref"
+reference="build_architecture") depicts an in depth view of the
 development and build process. Since Django's architecture follows
 dividing application into smaller application based on the
 functionality, it only makes more sense to keep source files of the
 respective frontend code to their backend applications.
 
 In figure
-[\[fig:build\_architecture\]](images/build_architecture){reference-type="ref"
-reference="fig:build_architecture") one can notice two react
+[build_architecture](images/build_architecture){reference-type="ref"
+reference="build_architecture") one can notice two react
 directories. One of the react directory stays in the same level as
 Django applications and the other react directory in inside every Django
 application. The outer react directory consists of different Webpack
@@ -1454,69 +1454,69 @@ for tree= font=, grow'=0, child anchor=west, parent anchor=south,
 anchor=west, calign=first, inner xsep=7pt, edge path= (!u.south west)
 +(7.5pt,0) \|- (.child anchor) pic folder ; , file/.style=edge path=
 (!u.south west) +(7.5pt,0) \|- (.child anchor) ;, inner xsep=2pt,font= ,
-before typesetting nodes= if n=1 insert before=\[,phantom\] , fit=band,
-before computing xy=l=14pt, \[[thesis \[[app]{style="color: orange"),
+before typesetting nodes= if n=1 insert before=,phantom , fit=band,
+before computing xy=l=14pt, [thesis [app]{style="color: orange"),
 )
-\[[app]{style="color: orange"), label=right:[...Django and Celery
+[app]{style="color: orange"), label=right:[...Django and Celery
 Configuration Directory]{style="color: green")
-\[[celery.py]{style="color: purple"),file\]
-\[[settings.py]{style="color: purple"),file\]
-\[[urls.py]{style="color: purple"),file\]
-\[[wsgi.py]{style="color: purple"),file\] \]
-\[[main]{style="color: orange"), label=right:[...Django Main
-App]{style="color: green") \[[react]{style="color: orange")
-\[[css]{style="color: orange"), label=right:[...Frontend development
+[celery.py]{style="color: purple"),file
+[settings.py]{style="color: purple"),file
+[urls.py]{style="color: purple"),file
+[wsgi.py]{style="color: purple"),file 
+[main]{style="color: orange"), label=right:[...Django Main
+App]{style="color: green") [react]{style="color: orange")
+[css]{style="color: orange"), label=right:[...Frontend development
 files reside here]{style="color: green")
-\[[main.css]{style="color: red"),file\] \] \[[js]{style="color: orange")
-\[[base.js]{style="color: blue"),file\]
-\[[components]{style="color: orange")
-\[[actions.js]{style="color: blue"),file\] \] \] \]
-\[[static]{style="color: orange"), label=right:[...Frontend compiled
-files reside here]{style="color: green") \[[main]{style="color: orange")
-\[[scripts]{style="color: orange")
-\[[base.bundle.js]{style="color: blue"),file\] \]
-\[[styles]{style="color: orange")
-\[[main.css]{style="color: red"),file\] \] \] \]
-\[[templates]{style="color: orange"), label=right:[...Skeleton HTML
+[main.css]{style="color: red"),file  [js]{style="color: orange")
+[base.js]{style="color: blue"),file
+[components]{style="color: orange")
+[actions.js]{style="color: blue"),file   
+[static]{style="color: orange"), label=right:[...Frontend compiled
+files reside here]{style="color: green") [main]{style="color: orange")
+[scripts]{style="color: orange")
+[base.bundle.js]{style="color: blue"),file 
+[styles]{style="color: orange")
+[main.css]{style="color: red"),file   
+[templates]{style="color: orange"), label=right:[...Skeleton HTML
 files for each page]{style="color: green")
-\[[base.html]{style="color: red"),file\] \]
-\[[migrations]{style="color: orange"), label=right: [...Database
+[base.html]{style="color: red"),file 
+[migrations]{style="color: orange"), label=right: [...Database
 migration scripts]{style="color: green")
-\[[0001\_initial.py]{style="color: purple"),file\] \]
-\[[admin.py]{style="color: purple"),file\]
-\[[apps.py]{style="color: purple"),file\]
-\[[models.py]{style="color: purple"),file\]
-\[[tasks.py]{style="color: purple"),file\]
-\[[tests.py]{style="color: purple"),file\]
-\[[urls.py]{style="color: purple"),file\]
-\[[views.py]{style="color: purple"),file\] \]
-\[[react]{style="color: orange"),label=right:[...Webpack configuration
+[0001_initial.py]{style="color: purple"),file 
+[admin.py]{style="color: purple"),file
+[apps.py]{style="color: purple"),file
+[models.py]{style="color: purple"),file
+[tasks.py]{style="color: purple"),file
+[tests.py]{style="color: purple"),file
+[urls.py]{style="color: purple"),file
+[views.py]{style="color: purple"),file 
+[react]{style="color: orange"),label=right:[...Webpack configuration
 files with start and build scripts]{style="color: green")
-\[[config]{style="color: orange")
-\[[webpack.config.js]{style="color: blue"),file\] \]
-\[[polyfills.js]{style="color: blue"),file\]
-\[[scripts]{style="color: orange")
-\[[build.js]{style="color: blue"),file\]
-\[[start.js]{style="color: blue"),file\] \]
-\[[tests]{style="color: orange")\] \]
-\[[socket\_app]{style="color: orange"), label=right:[...Socket server
-app]{style="color: green") \[[node\_modules]{style="color: orange"),
-)\]
-\[[package.json]{style="color: red"),file\]
-\[[package-lock.json]{style="color: red"),file\]
-\[[server.js]{style="color: blue"),file\] \]
-\[[media]{style="color: orange") \[[csv]{style="color: orange")\] \]
-\[[node\_modules]{style="color: orange"), label=right:[...Frontend and
-reactJS dependency library]{style="color: green")\]
-\[[package.json]{style="color: red"),file\]
-\[[package-lock.json]{style="color: red"),file\]
-\[[requirements.txt]{style="color: red"),file\]
-\[[manage.py]{style="color: purple"),file, label=right:[...Django
-management script]{style="color: green")\]
-\[[db.sqlite3]{style="color: red"),file, label=right:[...SQLite database
-file]{style="color: green")\] \[[static]{style="color: orange")\] \]
-\[[env]{style="color: orange"), label=right:[...python library
-directory]{style="color: green")\] \]]{.smallcaps}
+[config]{style="color: orange")
+[webpack.config.js]{style="color: blue"),file 
+[polyfills.js]{style="color: blue"),file
+[scripts]{style="color: orange")
+[build.js]{style="color: blue"),file
+[start.js]{style="color: blue"),file 
+[tests]{style="color: orange") 
+[socket_app]{style="color: orange"), label=right:[...Socket server
+app]{style="color: green") [node_modules]{style="color: orange"),
+)
+[package.json]{style="color: red"),file
+[package-lock.json]{style="color: red"),file
+[server.js]{style="color: blue"),file 
+[media]{style="color: orange") [csv]{style="color: orange") 
+[node_modules]{style="color: orange"), label=right:[...Frontend and
+reactJS dependency library]{style="color: green")
+[package.json]{style="color: red"),file
+[package-lock.json]{style="color: red"),file
+[requirements.txt]{style="color: red"),file
+[manage.py]{style="color: purple"),file, label=right:[...Django
+management script]{style="color: green")
+[db.sqlite3]{style="color: red"),file, label=right:[...SQLite database
+file]{style="color: green") [static]{style="color: orange") 
+[env]{style="color: orange"), label=right:[...python library
+directory]{style="color: green") ]{.smallcaps}
 
 ### Setup Guide
 
@@ -1656,31 +1656,31 @@ files.
 Application Screenshots
 -----------------------
 
-[\[fig:ss\_login\]](images/ss_login )
+[ss_login](images/ss_login )
 
-[\[fig:ss\_upload\_csv\]](images/ss_upload_csv )
+[ss_upload_csv](images/ss_upload_csv )
 
-[\[fig:ss\_data\_preprocessing\]](images/ss_data_preprocessing
+[ss_data_preprocessing](images/ss_data_preprocessing
 )
 
-[\[fig:ss\_add\_delete\_transform\_column\]](images/ss_add_delete_transform_column
+[ss_add_delete_transform_column](images/ss_add_delete_transform_column
 )
 
-[\[fig:ss\_handle\_null\_scale\_data\]](images/ss_handle_null_scale_data
+[ss_handle_null_scale_data](images/ss_handle_null_scale_data
 )
 
-[\[fig:ss\_feature\_columns\]](images/ss_feature_columns
+[ss_feature_columns](images/ss_feature_columns
 )
 
-[\[fig:ss\_build\_layers\]](images/ss_build_layers
+[ss_build_layers](images/ss_build_layers
 )
 
-[\[fig:ss\_loss\_function\]](images/ss_loss_function
+[ss_loss_function](images/ss_loss_function
 )
 
-[\[fig:ss\_optimizer\]](images/ss_optimizer )
+[ss_optimizer](images/ss_optimizer )
 
-[\[fig:ss\_visualization\]](images/ss_visualization
+[ss_visualization](images/ss_visualization
 )
 
 Evaluation
@@ -1728,15 +1728,15 @@ GUI.\
 function for training and also choose the class column.\
 **Step 5:** Click on the start button to start the training process.
 
-[\[fig:weka\_training\_results\]](images/weka_training_results
+[weka_training_results](images/weka_training_results
 )
 
 #### Results
 
 The time taken from the start till the model being trained is
 approximately **5 minutes**. From the figure
-[\[fig:weka\_training\_results\]](images/weka_training_results){reference-type="ref"
-reference="fig:weka_training_results"), the time taken just for training
+[weka_training_results](images/weka_training_results){reference-type="ref"
+reference="weka_training_results"), the time taken just for training
 the network is **0.13 seconds**.
 
 With Weka, the total time taken to train the data-set is very less. But
@@ -1755,17 +1755,17 @@ of data-set it could take significantly longer.
 
 ### Microsoft's ML Studio
 
-[\[fig:ML\_studio\_training\]](images/ML_studio_training
+[ML_studio_training](images/ML_studio_training
 )
 
 Since Microsoft's ML studio is using the drag and drop approach to build
 a training model, it requires some learning time. The overall time taken
 to train the model is approximately **30 minutes**. From figure
-[\[fig:ML\_studio\_results\]](images/ML_studio_results){reference-type="ref"
-reference="fig:ML_studio_results") the training process itself took
+[ML_studio_results](images/ML_studio_results){reference-type="ref"
+reference="ML_studio_results") the training process itself took
 nearly **30 seconds**.
 
-[\[fig:ML\_studio\_results\]](images/ML_studio_results
+[ML_studio_results](images/ML_studio_results
 )
 
 ### Current Implementation
