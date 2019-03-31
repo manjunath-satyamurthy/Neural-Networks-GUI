@@ -50,7 +50,7 @@ axon to the dendrite of another neuron. The figure
 reference="bio_neuron") shows a typical biological neuron with the
 parts as described above [@neuronworking].
 
-[bio_neuron](/images/bio_neuron.png)
+![bio_neuron](/images/bio_neuron.png)
 
 Each neuron creates a voltage difference around itself by having
 different chemical combinations of ions. Perhaps, this is the most
@@ -60,7 +60,7 @@ change in the voltage around the neuron's cell membrane, the neuron is
 triggered or activated and creates something called as nerve impulse. As
 each neuron is connected to thousand other neurons, this impulse is then
 transmitted through the synaptic connection to other connected neurons
-[@synapse].
+![@synapse].
 
 With a fair understanding about the working of a biological brain,
 psychologists and mathematicians together introduced artificial neural
@@ -72,7 +72,7 @@ mathematical function. And the dendrites could be visualized as the
 input to the node itself either directly or from another neuron. The
 process of connecting one node's output as input to another neuron could
 be visualized as the synaptic connection. The fig
-[ann](/images/ann.png){reference-type="ref" reference="ann") shows
+![ann](/images/ann.png){reference-type="ref" reference="ann") shows
 the similarities between the biological neuron and a neuron in ANN.
 
 With the structure of ANN ready, the model needs a learning mechanism.
@@ -89,7 +89,7 @@ This process is repeated until the model is said to be trained. A
 trained model simply means that it has adjusted its weights well enough
 to predict the result with high accuracy when a set of inputs is given
 similar to the ones used for learning but disjoint
-[@historyneuralnetworks].
+![@historyneuralnetworks].
 
 Research Topic
 --------------
@@ -255,7 +255,7 @@ addresses any known limitations.
 Current Trends
 ==============
 
-[current_trends]{#current_trends) The past
+![current_trends]{#current_trends) The past
 decade has seen a significant and rapid growth in the field of machine
 learning. With rapid expansion, there has been many tools and services
 built in order to make the learning process simple and easy to use. Each
@@ -298,10 +298,10 @@ machine learning services can also be a trained model for public access.
 Machine Learning Tools {#ml_tools}
 ----------------------
 
-[classification_tools](/images/classification_tools.png)
+![classification_tools](/images/classification_tools.png)
 
 Figure
-[classification_tools](/images/classification_tools.png){reference-type="ref"
+![classification_tools](/images/classification_tools.png){reference-type="ref"
 reference="classification_tools") shows a broad classification of
 Machine Learning Tools. Each tool has been described briefly with
 various features offered by each of them in the subsequent sections.
@@ -321,16 +321,16 @@ specialist than experts. It is mainly built for three purposes :
 3.  To compare different learning models suitable for a given data-set
 
 From figure
-[classification_tools](/images/classification_tools.png){reference-type="ref"
+![classification_tools](/images/classification_tools.png){reference-type="ref"
 reference="classification_tools"), Weka is classified under GUI
 which means that Weka is mainly used through a GUI. Weka offers four
 different interfaces with different use cases. Additionally, it also
 provides a command line interface. The figure
-[weka_gui](/images/weka_gui.png){reference-type="ref"
+![weka_gui](/images/weka_gui.png){reference-type="ref"
 reference="weka_gui") shows the Weka dialog offering the different
 interfaces.
 
-[weka_gui](/images/weka_gui.png)
+![weka_gui](/images/weka_gui.png)
 
 #### Explorer
 
@@ -349,14 +349,14 @@ data into the process.
 
 #### Experimenter
 
-[weka_experimenter](/images/weka_experimenter.png)
+![weka_experimenter](/images/weka_experimenter.png)
 
 Weka Experimenter, perhaps, is the most interesting part of Weka as it
 addresses the same issue which this thesis is addressing to.
 Experimenter helps data scientists to find the right methods and
 parameters for a given data set. Weka also provides the capability of
 running the training process in a distributed environment. Figure
-[weka_experimenter](/images/weka_experimenter.png){reference-type="ref"
+![weka_experimenter](/images/weka_experimenter.png){reference-type="ref"
 reference="weka_experimenter") is a screenshot from the Weka
 Experimenter GUI [@TheWekaWorkbench].
 
@@ -376,7 +376,7 @@ to handle the whole learning process through GUI and drag and drop.
 Thus, it is fair to compare this service with other machine learning
 tools.
 
-[ML_studio](/images/ML_studio.png)
+![ML_studio](/images/ML_studio.png)
 
 Microsoft's ML Studio offers a complete solution. By complete it means
 that the (ML) studio covers all the machine learning processes within
@@ -387,7 +387,7 @@ save trained models for making prediction. The ML Studio comprises of
 hundreds of packages and algorithms.
 
 A close inspection at the figure
-[ML_studio](/images/ML_studio.png){reference-type="ref"
+![ML_studio](/images/ML_studio.png){reference-type="ref"
 reference="ML_studio") reveals the GUI is designed to be very
 intuitive. The GUI enforces the data scientist to make a flow diagram
 with their data-set as the starting point and consequently
@@ -494,7 +494,7 @@ instance, Facebook for face recognition, Amazon for alexa, etc. As most
 of the popular machine learning services come from Amazon, Google and
 Microsoft, it is fair to classify each services based on the provider.
 
-[ML_services](/images/ML_services.png)
+![ML_services](/images/ML_services.png)
 
 The figure [ML_services](/images/ML_services.png){reference-type="ref"
 reference="ML_services") displays a broad classification of modern
@@ -572,7 +572,7 @@ built by Microsoft that has simplified the machine learning process for
 each specific use case. For instance, package for computer vision, text
 analysis, forecasting, etc. Once the data scientist has completed
 building a model, the service also facilitates in deploying the same
-[@pythonPackageAzureML].
+![@pythonPackageAzureML].
 
 ### Google ML Services
 
@@ -603,11 +603,11 @@ can have clear idea about what features are provided by which tools.
 This will make it easier to further analyze and select a suitable set of
 tools and ideas which will be relevant to the requirements of data
 scientist and researchers. Table
-[table:compare_mltools](#table:compare_mltools){reference-type="ref"
+![table:compare_mltools](#table:compare_mltools){reference-type="ref"
 reference="table:compare_mltools") gives a complete summary of all the
 machine learning tools with their respective feature support.
 
-[table:compare_mltools]{#table:compare_mltools)
+![table:compare_mltools]{#table:compare_mltools)
 
   ------------------ ------------------------------- ------------------------------- ------------------------------------- ------------------------------- -------------------------------
   Language Support   Java                            python, R                       python , R, Java, Swift, Javascript   python                          Lua, python
@@ -625,7 +625,7 @@ From Chapter [current_trends](#current_trends){reference-type="ref"
 reference="current_trends") it is clear that the tools that help in
 building neural network models are mostly open source with the exception
 of Microsoft ML Studio described in section
-[2.2.2](#MLStudio){reference-type="ref" reference="MLStudio"). Most of
+![2.2.2](#MLStudio){reference-type="ref" reference="MLStudio"). Most of
 the machine learning services allows the use of open source solution
 with their services. The services themselves are closed source and the
 usage is mostly chargeable.
@@ -666,7 +666,7 @@ easier for future developments.
 
 After inspecting section [2.2.2](#MLStudio){reference-type="ref"
 reference="MLStudio") and section
-[2.3](#ML_services){reference-type="ref" reference="ML_services")
+![2.3](#ML_services){reference-type="ref" reference="ML_services")
 closely almost all services lack something. For instance, the ML studio
 does not offer automatic modelling based on the data available but
 Google's Cloud Auto ML offer that feature. Google's Cloud Auto ML lacks
@@ -772,13 +772,13 @@ the problem, plan the solution, or solve the problem,, [@Flowcharts].
 With the help of above brief explanation about how important a flowchart
 can be, we will now discuss the proposed flow chart for the application
 in figure
-[application_flow](/images/application_flow.png){reference-type="ref"
+![application_flow](/images/application_flow.png){reference-type="ref"
 reference="application_flow"). Each step represents individual
 component along with the flow of the application.
 
-[Source Author 2018](/images/application_flow.png)
+![Source Author 2018](/images/application_flow.png)
 
-[application_flow](/images/application_flow.png)
+![application_flow](/images/application_flow.png)
 
 #### 1. Upload CSV
 
@@ -856,13 +856,13 @@ According to Technopedia, ,,A prototype is an original model, form or an
 instance that serves as a basis for other processes. In software
 technology, the term prototype is a working example through which a new
 model or a new version of an existing product can be derived,,
-[@Technopedia:Prototype].
+![@Technopedia:Prototype].
 
 As the platforms processes are initiated by the user through the browser
 based GUI components, it makes it easier to visualize or create a
 road-map to build all the functionality of the platform from the
 perspective of the end user. Under section
-[3.1.2](#functional_aspects){reference-type="ref"
+![3.1.2](#functional_aspects){reference-type="ref"
 reference="functional_aspects") the minimum features and functionality
 that has to be offered is realized, but they are just description by
 words and sentences. Hence, creating a prototype which takes into
@@ -873,7 +873,7 @@ also useful while coding because this will help developers to have a
 broader picture of the indented results. ,,A prototype is an early
 sample, model, or release of a product built to test a concept or
 process or to act as a thing to be replicated or learned from,,
-[@BlackwellAmyHackneyandElizabethManar.2015].
+![@BlackwellAmyHackneyandElizabethManar.2015].
 
 There are many ways a prototype can be built. Some of the most popular
 approaches are as follows:
@@ -902,10 +902,10 @@ transforming it simultaneously. It contains tools for data
 pre-processing such as **Add Column**, **Delete Column**, **Scale
 Data**, **Handle Null** and **Transform Data**.
 
-[data_preprocessing](/images/data_preprocessing.png)
+![data_preprocessing](/images/data_preprocessing.png)
 
 The figure
-[data_preprocessing](/images/data_preprocessing.png){reference-type="ref"
+![data_preprocessing](/images/data_preprocessing.png){reference-type="ref"
 reference="data_preprocessing") display the complete view of the
 page after the user is logged in and has navigated to the data
 pre-processing page. The leftmost vertical bar is used for navigation
@@ -918,23 +918,23 @@ the view, the data pre-processing tool menu can be found. Clicking on
 any of these will result in opening the specific menu for further
 control and customization.
 
-[add_column](/images/add_column.png)
+![add_column](/images/add_column.png)
 
 From Figure
-[data_preprocessing](/images/data_preprocessing.png){reference-type="ref"
+![data_preprocessing](/images/data_preprocessing.png){reference-type="ref"
 reference="data_preprocessing"), if the user clicks on *Add Column*
 menu then the menu would disappear and the *Add Column* view from figure
-[add_column](/images/add_column.png){reference-type="ref"
+![add_column](/images/add_column.png){reference-type="ref"
 reference="add_column") will be shown. If the user click on *Delete
 Column* then the menu view transforms into the *Delete Column* view from
 the figure [add_column](/images/add_column.png){reference-type="ref"
 reference="add_column"). If the user clicks on *Scale Data* or
 *Handle Null* then the menu view transforms into *Scale Data* or *Handle
 Null* respectively from the figure
-[scale_column](/images/scale_column.png){reference-type="ref"
+![scale_column](/images/scale_column.png){reference-type="ref"
 reference="scale_column").
 
-[scale_column](/images/scale_column.png)
+![scale_column](/images/scale_column.png)
 
 ### Build Network
 
@@ -944,26 +944,26 @@ process comprises of several small configurations such as choosing
 Function** and choosing an **Optimization Method**.
 
 Figure
-[feature_columns](/images/feature_columns.png){reference-type="ref"
+![feature_columns](/images/feature_columns.png){reference-type="ref"
 reference="feature_columns") is the default view when the user
 navigates to data pre-processing page. This view lets the user to select
 the feature columns and set other initialization. Figure
-[build_layers](/images/build_layers.png){reference-type="ref"
+![build_layers](/images/build_layers.png){reference-type="ref"
 reference="build_layers") allows the user to create multiple hidden
 layers with flexibility to choose the number of neurons and activation
 function for each layer. Figure
-[loss_function](/images/loss_function.png){reference-type="ref"
+![loss_function](/images/loss_function.png){reference-type="ref"
 reference="loss_function") lets the user select a loss function
 through a simple drop-down menu. Figure
-[optimizer](/images/optimizer.png){reference-type="ref"
+![optimizer](/images/optimizer.png){reference-type="ref"
 reference="optimizer") allows the user to select an optimization
 function and also input the learning constant.
 
-[feature_columns](/images/feature_columns.png)
+![feature_columns](/images/feature_columns.png)
 
-[build_layers](/images/build_layers.png)
+![build_layers](/images/build_layers.png)
 
-[loss_function](/images/loss_function.png)
+![loss_function](/images/loss_function.png)
 
 ### Visualization
 
@@ -983,16 +983,16 @@ Even though Chapter [3](#proposed_solution){reference-type="ref"
 reference="proposed_solution") provides a promising solution, it is just
 an unrealized concept. The final solution primarily depends on the
 implementation details of the proposed platform from section
-[3.1.2.1](#development_components){reference-type="ref"
+![3.1.2.1](#development_components){reference-type="ref"
 reference="development_components") and secondarily the technology stack
 used for achieving the functionalities proposed in section
-[3.1.2.2](#application_specific){reference-type="ref"
+![3.1.2.2](#application_specific){reference-type="ref"
 reference="application_specific"). However, the proposed platform from
-[3.1.2.1](#development_components){reference-type="ref"
+![3.1.2.1](#development_components){reference-type="ref"
 reference="development_components") should ideally provide an easy to
 adapt environment which will remain agnostic to any change in the
 implementation details of section
-[3.1.2.2](#application_specific){reference-type="ref"
+![3.1.2.2](#application_specific){reference-type="ref"
 reference="application_specific") unless the tools remain mostly to
 python based implementations. This ensures that the solution remains
 flexible.
@@ -1110,7 +1110,7 @@ interaction and letting the backend focus on more important aspects.
 
 Since the choice of programming language for backend was decided as
 python under the section
-[5.1.1](#programming_language){reference-type="ref"
+![5.1.1](#programming_language){reference-type="ref"
 reference="programming_language"), the frameworks discussed in this
 section are based on python with one exception of nodeJS. Some of the
 most powerful web frameworks for python are Django, Flask, Tornado etc.
@@ -1196,7 +1196,7 @@ both the frontend and the backend.
 
 From section [3.1.1](#big_picture){reference-type="ref"
 reference="big_picture") in chapter
-[3](#proposed_solution){reference-type="ref"
+![3](#proposed_solution){reference-type="ref"
 reference="proposed_solution"), part of the solution is to make the
 solution available for different platform. To achieve this for a web
 application the only part of the application that can be distributed for
@@ -1238,8 +1238,8 @@ initial implementation requires very little database interaction.
 
 With respect to the libraries that are to be used for neural network
 training and data pre-processing, section
-[2.2](#ml_tools){reference-type="ref" reference="ml_tools") from chapter
-[current_trends](#current_trends){reference-type="ref"
+![2.2](#ml_tools){reference-type="ref" reference="ml_tools") from chapter
+![current_trends](#current_trends){reference-type="ref"
 reference="current_trends") discusses all the state of the art tools
 available for machine learning purposes. Some of them such as WEKA, ML
 Studio from Microsoft are not suitable for integration in the project.
@@ -1288,10 +1288,10 @@ designing the client side are default.
 System Architecture
 -------------------
 
-[system_architecture](/images/system_architecture.png)
+![system_architecture](/images/system_architecture.png)
 
 Figure
-[system_architecture](/images/system_architecture.png){reference-type="ref"
+![system_architecture](/images/system_architecture.png){reference-type="ref"
 reference="system_architecture") shows a three layered client-server
 architecture. The first layer is the end user or the client. The middle
 layer consists of the HTTP server and a Websocket server. The last layer
@@ -1347,7 +1347,7 @@ channel in the Redis Database.
 ### Data Flow in the System
 
 Using the figure
-[system_architecture](/images/system_architecture.png){reference-type="ref"
+![system_architecture](/images/system_architecture.png){reference-type="ref"
 reference="system_architecture") the flow of the process in this
 architecture is explained with an example action of an end user clicking
 on the start training button on the client side. This particular example
@@ -1388,14 +1388,14 @@ could be explained in its entirely.
 Frontend Development and Build Process
 --------------------------------------
 
-[build_architecture](/images/build_architecture.png)
+![build_architecture](/images/build_architecture.png)
 
 Due to the use of ReactJS for the client side application and also to
 provide the feature of bundling the client side application in different
 forms as described in section [3.1.1](#big_picture){reference-type="ref"
 reference="big_picture"), this implementation uses a build automation
 framework called Webpack. Figure
-[build_architecture](/images/build_architecture.png){reference-type="ref"
+![build_architecture](/images/build_architecture.png){reference-type="ref"
 reference="build_architecture") depicts an in depth view of the
 development and build process. Since Django's architecture follows
 dividing application into smaller application based on the
@@ -1403,7 +1403,7 @@ functionality, it only makes more sense to keep source files of the
 respective frontend code to their backend applications.
 
 In figure
-[build_architecture](/images/build_architecture.png){reference-type="ref"
+![build_architecture](/images/build_architecture.png){reference-type="ref"
 reference="build_architecture") one can notice two react
 directories. One of the react directory stays in the same level as
 Django applications and the other react directory in inside every Django
@@ -1454,7 +1454,7 @@ celery worker setup process.
 
 **Step 1:** Open the terminal and change directory into the project root
 directory mentioned in section
-[5.4.1](#project_structure){reference-type="ref"
+![5.4.1](#project_structure){reference-type="ref"
 reference="project_structure").
 
 ``` {.bash language="bash")
@@ -1577,25 +1577,25 @@ files.
 Application Screenshots
 -----------------------
 
-[ss_login](/images/ss_login.png)
+![ss_login](/images/ss_login.png)
 
-[ss_upload_csv](/images/ss_upload_csv.png)
+![ss_upload_csv](/images/ss_upload_csv.png)
 
-[ss_data_preprocessing](/images/ss_data_preprocessing.png)
+![ss_data_preprocessing](/images/ss_data_preprocessing.png)
 
-[ss_add_delete_transform_column](/images/ss_add_delete_transform_column.png)
+![ss_add_delete_transform_column](/images/ss_add_delete_transform_column.png)
 
-[ss_handle_null_scale_data](/images/ss_handle_null_scale_data.png)
+![ss_handle_null_scale_data](/images/ss_handle_null_scale_data.png)
 
-[ss_feature_columns](/images/ss_feature_columns.png)
+![ss_feature_columns](/images/ss_feature_columns.png)
 
-[ss_build_layers](/images/ss_build_layers.png)
+![ss_build_layers](/images/ss_build_layers.png)
 
-[ss_loss_function](/images/ss_loss_function.png)
+![ss_loss_function](/images/ss_loss_function.png)
 
-[ss_optimizer](/images/ss_optimizer.png)
+![ss_optimizer](/images/ss_optimizer.png)
 
-[ss_visualization](/images/ss_visualization.png)
+![ss_visualization](/images/ss_visualization.png)
 
 Evaluation
 ==========
@@ -1608,7 +1608,7 @@ to compare the current implementation with the existing tools and
 services in its entirety. Although its possible to compare some of the
 basic functionalities, the current implementation supports and also
 compares the big picture discussed in section
-[3.1.1](#big_picture){reference-type="ref" reference="big_picture") with
+![3.1.1](#big_picture){reference-type="ref" reference="big_picture") with
 the existing state of the art machine learning tools and services.
 
 Evaluation By Comparison
@@ -1626,7 +1626,7 @@ and most recognized data-set suitable for the evaluation appears to be
 the iris data-set from the UCI Machine Learning Repository originally
 published in the Fisher's paper. The data-set contains three classes
 which represent each type of an iris plant
-[@doi:10.1111/j.1469-1809.1936.tb02137.x].
+![@doi:10.1111/j.1469-1809.1936.tb02137.x].
 
 ### Weka
 
@@ -1642,13 +1642,13 @@ GUI.\
 function for training and also choose the class column.\
 **Step 5:** Click on the start button to start the training process.
 
-[weka_training_results](/images/weka_training_results.png)
+![weka_training_results](/images/weka_training_results.png)
 
 #### Results
 
 The time taken from the start till the model being trained is
 approximately **5 minutes**. From the figure
-[weka_training_results](/images/weka_training_results.png){reference-type="ref"
+![weka_training_results](/images/weka_training_results.png){reference-type="ref"
 reference="weka_training_results"), the time taken just for training
 the network is **0.13 seconds**.
 
@@ -1668,16 +1668,16 @@ of data-set it could take significantly longer.
 
 ### Microsoft's ML Studio
 
-[ML_studio_training](/images/ML_studio_training.png)
+![ML_studio_training](/images/ML_studio_training.png)
 
 Since Microsoft's ML studio is using the drag and drop approach to build
 a training model, it requires some learning time. The overall time taken
 to train the model is approximately **30 minutes**. From figure
-[ML_studio_results](/images/ML_studio_results.png){reference-type="ref"
+![ML_studio_results](/images/ML_studio_results.png){reference-type="ref"
 reference="ML_studio_results") the training process itself took
 nearly **30 seconds**.
 
-[ML_studio_results](/images/ML_studio_results.png)
+![ML_studio_results](/images/ML_studio_results.png)
 
 ### Current Implementation
 
